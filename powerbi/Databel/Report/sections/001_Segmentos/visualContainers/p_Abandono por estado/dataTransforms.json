@@ -1,0 +1,86 @@
+{
+  "projectionOrdering": {
+    "Category": [
+      0
+    ],
+    "Y": [
+      1
+    ]
+  },
+  "queryMetadata": {
+    "Select": [
+      {
+        "Restatement": "State",
+        "Name": "Databel - Data.State",
+        "Type": 2048
+      },
+      {
+        "Restatement": "Tasa de abandono",
+        "Name": "Databel - Data.Tasa de abandono",
+        "Type": 1,
+        "Format": "0.00%"
+      }
+    ]
+  },
+  "visualElements": [
+    {
+      "DataRoles": [
+        {
+          "Name": "Category",
+          "Projection": 0,
+          "isActive": true
+        },
+        {
+          "Name": "Y",
+          "Projection": 1,
+          "isActive": false
+        }
+      ]
+    }
+  ],
+  "selects": [
+    {
+      "displayName": "State",
+      "queryName": "Databel - Data.State",
+      "roles": {
+        "Category": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 1
+      },
+      "expr": {
+        "Column": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "Databel - Data"
+            }
+          },
+          "Property": "State"
+        }
+      }
+    },
+    {
+      "displayName": "Tasa de abandono",
+      "queryName": "Databel - Data.Tasa de abandono",
+      "roles": {
+        "Y": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 259
+      },
+      "expr": {
+        "Measure": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "Databel - Data"
+            }
+          },
+          "Property": "Tasa de abandono"
+        }
+      },
+      "format": "0.00%"
+    }
+  ]
+}

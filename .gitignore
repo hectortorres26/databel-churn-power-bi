@@ -1,0 +1,10 @@
+referencias_originales/
+trabajo/
+evidence/
+data/*.csv
+*.pbix
+__pycache__/
+.venv/
+*.tmp
+estado_local.json
+test_skill_local.txt

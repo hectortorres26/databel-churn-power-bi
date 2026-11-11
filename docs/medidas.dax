@@ -1,0 +1,26 @@
+Clientes =
+DISTINCTCOUNT('Databel - Data'[Customer ID])
+
+Bajas =
+CALCULATE([Clientes], KEEPFILTERS('Databel - Data'[Churn Label] = "Yes"))
+
+Tasa de abandono =
+DIVIDE([Bajas], [Clientes])
+
+Clientes retenidos =
+CALCULATE([Clientes], KEEPFILTERS('Databel - Data'[Churn Label] = "No"))
+
+Bajas sin motivo =
+CALCULATE([Bajas], KEEPFILTERS('Databel - Data'[Motivo de abandono] = "Sin motivo informado"))
+
+Cargo mensual medio =
+AVERAGE('Databel - Data'[Monthly Charge])
+
+Llamadas de servicio medias =
+AVERAGE('Databel - Data'[Customer Service Calls])
+
+Filas =
+COUNTROWS('Databel - Data')
+
+IDs duplicados =
+[Filas] - [Clientes]

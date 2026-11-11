@@ -1,0 +1,21 @@
+// Validación independiente en el modelo inicial de DataCamp.
+// No modifica medidas persistentes ni demuestra la carga de la plantilla propia.
+DEFINE
+    MEASURE 'Databel - Data'[Clientes auditados] = DISTINCTCOUNT('Databel - Data'[Customer ID])
+    MEASURE 'Databel - Data'[Bajas auditadas] = CALCULATE([Clientes auditados], KEEPFILTERS('Databel - Data'[Churn Label] = "Yes"))
+    MEASURE 'Databel - Data'[Tasa auditada] = DIVIDE([Bajas auditadas], [Clientes auditados])
+EVALUATE
+ROW(
+    "Clientes", [Clientes auditados],
+    "Bajas", [Bajas auditadas],
+    "Tasa", FORMAT([Tasa auditada], "0.00%"),
+    "IDs duplicados", COUNTROWS('Databel - Data') - [Clientes auditados],
+    "Bajas sin motivo", CALCULATE([Bajas auditadas], 'Databel - Data'[Churn Reason] = "")
+)
+EVALUATE
+SUMMARIZECOLUMNS(
+    'Databel - Data'[Contract Type],
+    "Clientes", [Clientes auditados],
+    "Bajas", [Bajas auditadas],
+    "Tasa", FORMAT([Tasa auditada], "0.00%")
+)
