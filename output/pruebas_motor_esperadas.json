@@ -1,0 +1,711 @@
+{
+  "filter_cases": [
+    {
+      "name": "Total",
+      "filters": {},
+      "expected": {
+        "Clientes": 6687,
+        "Bajas": 1796,
+        "Tasa de abandono": 0.2685808284731569,
+        "Clientes retenidos": 4891,
+        "Bajas sin motivo": 27,
+        "Cargo mensual medio": 31.030357409899807,
+        "Llamadas de servicio medias": 0.9156572454015254,
+        "Filas": 6687,
+        "IDs duplicados": 0
+      }
+    },
+    {
+      "name": "Contrato mensual",
+      "filters": {
+        "Contract Type": "Month-to-Month"
+      },
+      "expected": {
+        "Clientes": 3411,
+        "Bajas": 1579,
+        "Tasa de abandono": 0.4629141014365289,
+        "Clientes retenidos": 1832,
+        "Bajas sin motivo": 11,
+        "Cargo mensual medio": 31.796247434769864,
+        "Llamadas de servicio medias": 1.3095866314863676,
+        "Filas": 3411,
+        "IDs duplicados": 0
+      }
+    },
+    {
+      "name": "Contrato anual",
+      "filters": {
+        "Contract Type": "One Year"
+      },
+      "expected": {
+        "Clientes": 1479,
+        "Bajas": 167,
+        "Tasa de abandono": 0.11291413116970926,
+        "Clientes retenidos": 1312,
+        "Bajas sin motivo": 10,
+        "Cargo mensual medio": 30.84448951994591,
+        "Llamadas de servicio medias": 0.581473968897904,
+        "Filas": 1479,
+        "IDs duplicados": 0
+      }
+    },
+    {
+      "name": "Contrato dos años",
+      "filters": {
+        "Contract Type": "Two Year"
+      },
+      "expected": {
+        "Clientes": 1797,
+        "Bajas": 50,
+        "Tasa de abandono": 0.027824151363383415,
+        "Clientes retenidos": 1747,
+        "Bajas sin motivo": 6,
+        "Cargo mensual medio": 29.72954924874791,
+        "Llamadas de servicio medias": 0.442960489705064,
+        "Filas": 1797,
+        "IDs duplicados": 0
+      }
+    },
+    {
+      "name": "Edad menor de 30",
+      "filters": {
+        "Grupo de edad": "Menores de 30"
+      },
+      "expected": {
+        "Clientes": 1287,
+        "Bajas": 296,
+        "Tasa de abandono": 0.22999222999222999,
+        "Clientes retenidos": 991,
+        "Bajas sin motivo": 5,
+        "Cargo mensual medio": 29.553224553224553,
+        "Llamadas de servicio medias": 0.8368298368298368,
+        "Filas": 1287,
+        "IDs duplicados": 0
+      }
+    },
+    {
+      "name": "Edad 65 o más",
+      "filters": {
+        "Grupo de edad": "65 o más"
+      },
+      "expected": {
+        "Clientes": 1256,
+        "Bajas": 483,
+        "Tasa de abandono": 0.38455414012738853,
+        "Clientes retenidos": 773,
+        "Bajas sin motivo": 5,
+        "Cargo mensual medio": 37.27468152866242,
+        "Llamadas de servicio medias": 1.1878980891719746,
+        "Filas": 1256,
+        "IDs duplicados": 0
+      }
+    },
+    {
+      "name": "Estado CA",
+      "filters": {
+        "State": "CA"
+      },
+      "expected": {
+        "Clientes": 68,
+        "Bajas": 43,
+        "Tasa de abandono": 0.6323529411764706,
+        "Clientes retenidos": 25,
+        "Bajas sin motivo": 27,
+        "Cargo mensual medio": 32.44117647058823,
+        "Llamadas de servicio medias": 0.6470588235294118,
+        "Filas": 68,
+        "IDs duplicados": 0
+      }
+    },
+    {
+      "name": "CA y mensual",
+      "filters": {
+        "State": "CA",
+        "Contract Type": "Month-to-Month"
+      },
+      "expected": {
+        "Clientes": 33,
+        "Bajas": 26,
+        "Tasa de abandono": 0.7878787878787878,
+        "Clientes retenidos": 7,
+        "Bajas sin motivo": 11,
+        "Cargo mensual medio": 32.36363636363637,
+        "Llamadas de servicio medias": 0.8787878787878788,
+        "Filas": 33,
+        "IDs duplicados": 0
+      }
+    },
+    {
+      "name": "Actividad internacional sin plan",
+      "filters": {
+        "Intl Active": "Yes",
+        "Intl Plan": "no"
+      },
+      "expected": {
+        "Clientes": 2097,
+        "Bajas": 846,
+        "Tasa de abandono": 0.4034334763948498,
+        "Clientes retenidos": 1251,
+        "Bajas sin motivo": 9,
+        "Cargo mensual medio": 32.182164997615644,
+        "Llamadas de servicio medias": 1.251311397234144,
+        "Filas": 2097,
+        "IDs duplicados": 0
+      }
+    },
+    {
+      "name": "Actividad internacional con plan",
+      "filters": {
+        "Intl Active": "Yes",
+        "Intl Plan": "yes"
+      },
+      "expected": {
+        "Clientes": 474,
+        "Bajas": 36,
+        "Tasa de abandono": 0.0759493670886076,
+        "Clientes retenidos": 438,
+        "Bajas sin motivo": 4,
+        "Cargo mensual medio": 28.40295358649789,
+        "Llamadas de servicio medias": 0.48945147679324896,
+        "Filas": 474,
+        "IDs duplicados": 0
+      }
+    },
+    {
+      "name": "Solo clientes retenidos",
+      "filters": {
+        "Churn Label": "No"
+      },
+      "expected": {
+        "Clientes": 4891,
+        "Bajas": null,
+        "Tasa de abandono": null,
+        "Clientes retenidos": 4891,
+        "Bajas sin motivo": null,
+        "Cargo mensual medio": 28.911470047025148,
+        "Llamadas de servicio medias": 0.37211204252709057,
+        "Filas": 4891,
+        "IDs duplicados": 0
+      }
+    },
+    {
+      "name": "Sin registros",
+      "filters": {
+        "State": "__SIN_ESTADO__"
+      },
+      "expected": {
+        "Clientes": null,
+        "Bajas": null,
+        "Tasa de abandono": null,
+        "Clientes retenidos": null,
+        "Bajas sin motivo": null,
+        "Cargo mensual medio": null,
+        "Llamadas de servicio medias": null,
+        "Filas": null,
+        "IDs duplicados": null
+      }
+    },
+    {
+      "name": "Total restablecido",
+      "filters": {},
+      "expected": {
+        "Clientes": 6687,
+        "Bajas": 1796,
+        "Tasa de abandono": 0.2685808284731569,
+        "Clientes retenidos": 4891,
+        "Bajas sin motivo": 27,
+        "Cargo mensual medio": 31.030357409899807,
+        "Llamadas de servicio medias": 0.9156572454015254,
+        "Filas": 6687,
+        "IDs duplicados": 0
+      }
+    }
+  ],
+  "visual_cases": [
+    {
+      "name": "Abandono por contrato",
+      "column": "Contract Type",
+      "measure": "Tasa de abandono",
+      "expected": [
+        {
+          "category": "Month-to-Month",
+          "value": 0.4629141014365289
+        },
+        {
+          "category": "One Year",
+          "value": 0.11291413116970926
+        },
+        {
+          "category": "Two Year",
+          "value": 0.027824151363383415
+        }
+      ]
+    },
+    {
+      "name": "Bajas por categoría",
+      "column": "Categoria de abandono",
+      "measure": "Bajas",
+      "expected": [
+        {
+          "category": "Attitude",
+          "value": 287
+        },
+        {
+          "category": "Competitor",
+          "value": 805
+        },
+        {
+          "category": "Dissatisfaction",
+          "value": 286
+        },
+        {
+          "category": "Other",
+          "value": 191
+        },
+        {
+          "category": "Price",
+          "value": 200
+        },
+        {
+          "category": "Sin motivo informado",
+          "value": 27
+        }
+      ]
+    },
+    {
+      "name": "Abandono por edad",
+      "column": "Grupo de edad",
+      "measure": "Tasa de abandono",
+      "expected": [
+        {
+          "category": "30 a 64",
+          "value": 0.2454150579150579
+        },
+        {
+          "category": "65 o más",
+          "value": 0.38455414012738853
+        },
+        {
+          "category": "Menores de 30",
+          "value": 0.22999222999222999
+        }
+      ]
+    },
+    {
+      "name": "Abandono por estado",
+      "column": "State",
+      "measure": "Tasa de abandono",
+      "expected": [
+        {
+          "category": "AK",
+          "value": 0.28846153846153844
+        },
+        {
+          "category": "AL",
+          "value": 0.2857142857142857
+        },
+        {
+          "category": "AR",
+          "value": 0.24545454545454545
+        },
+        {
+          "category": "AZ",
+          "value": 0.234375
+        },
+        {
+          "category": "CA",
+          "value": 0.6323529411764706
+        },
+        {
+          "category": "CO",
+          "value": 0.2196969696969697
+        },
+        {
+          "category": "CT",
+          "value": 0.25675675675675674
+        },
+        {
+          "category": "DC",
+          "value": 0.19444444444444445
+        },
+        {
+          "category": "DE",
+          "value": 0.30327868852459017
+        },
+        {
+          "category": "FL",
+          "value": 0.2125984251968504
+        },
+        {
+          "category": "GA",
+          "value": 0.23148148148148148
+        },
+        {
+          "category": "HI",
+          "value": 0.2641509433962264
+        },
+        {
+          "category": "IA",
+          "value": 0.26666666666666666
+        },
+        {
+          "category": "ID",
+          "value": 0.2789115646258503
+        },
+        {
+          "category": "IL",
+          "value": 0.28448275862068967
+        },
+        {
+          "category": "IN",
+          "value": 0.2937062937062937
+        },
+        {
+          "category": "KS",
+          "value": 0.2553191489361702
+        },
+        {
+          "category": "KY",
+          "value": 0.3050847457627119
+        },
+        {
+          "category": "LA",
+          "value": 0.24271844660194175
+        },
+        {
+          "category": "MA",
+          "value": 0.25190839694656486
+        },
+        {
+          "category": "MD",
+          "value": 0.32857142857142857
+        },
+        {
+          "category": "ME",
+          "value": 0.23387096774193547
+        },
+        {
+          "category": "MI",
+          "value": 0.273972602739726
+        },
+        {
+          "category": "MN",
+          "value": 0.2261904761904762
+        },
+        {
+          "category": "MO",
+          "value": 0.28346456692913385
+        },
+        {
+          "category": "MS",
+          "value": 0.2846153846153846
+        },
+        {
+          "category": "MT",
+          "value": 0.31386861313868614
+        },
+        {
+          "category": "NC",
+          "value": 0.20588235294117646
+        },
+        {
+          "category": "ND",
+          "value": 0.25
+        },
+        {
+          "category": "NE",
+          "value": 0.32786885245901637
+        },
+        {
+          "category": "NH",
+          "value": 0.32142857142857145
+        },
+        {
+          "category": "NJ",
+          "value": 0.27007299270072993
+        },
+        {
+          "category": "NM",
+          "value": 0.24193548387096775
+        },
+        {
+          "category": "NV",
+          "value": 0.2727272727272727
+        },
+        {
+          "category": "NY",
+          "value": 0.23353293413173654
+        },
+        {
+          "category": "OH",
+          "value": 0.34810126582278483
+        },
+        {
+          "category": "OK",
+          "value": 0.1951219512195122
+        },
+        {
+          "category": "OR",
+          "value": 0.3076923076923077
+        },
+        {
+          "category": "PA",
+          "value": 0.3333333333333333
+        },
+        {
+          "category": "RI",
+          "value": 0.25190839694656486
+        },
+        {
+          "category": "SC",
+          "value": 0.3
+        },
+        {
+          "category": "SD",
+          "value": 0.225
+        },
+        {
+          "category": "TN",
+          "value": 0.22641509433962265
+        },
+        {
+          "category": "TX",
+          "value": 0.2896551724137931
+        },
+        {
+          "category": "UT",
+          "value": 0.25
+        },
+        {
+          "category": "VA",
+          "value": 0.2709677419354839
+        },
+        {
+          "category": "VT",
+          "value": 0.2653061224489796
+        },
+        {
+          "category": "WA",
+          "value": 0.2196969696969697
+        },
+        {
+          "category": "WI",
+          "value": 0.25
+        },
+        {
+          "category": "WV",
+          "value": 0.2676056338028169
+        },
+        {
+          "category": "WY",
+          "value": 0.24675324675324675
+        }
+      ]
+    },
+    {
+      "name": "Abandono y grupos",
+      "column": "Group",
+      "measure": "Tasa de abandono",
+      "expected": [
+        {
+          "category": "No",
+          "value": 0.32849399922570655
+        },
+        {
+          "category": "Yes",
+          "value": 0.0650887573964497
+        }
+      ]
+    },
+    {
+      "name": "Clientes por edad",
+      "column": "Grupo de edad",
+      "measure": "Clientes",
+      "expected": [
+        {
+          "category": "30 a 64",
+          "value": 4144
+        },
+        {
+          "category": "65 o más",
+          "value": 1256
+        },
+        {
+          "category": "Menores de 30",
+          "value": 1287
+        }
+      ]
+    },
+    {
+      "name": "Tasa por datos ilimitados",
+      "column": "Unlimited Data Plan",
+      "measure": "Tasa de abandono",
+      "expected": [
+        {
+          "category": "No",
+          "value": 0.16096671226630188
+        },
+        {
+          "category": "Yes",
+          "value": 0.3210947930574099
+        }
+      ]
+    },
+    {
+      "name": "Tasa por llamadas a servicio",
+      "column": "Customer Service Calls",
+      "measure": "Tasa de abandono",
+      "expected": [
+        {
+          "category": "0",
+          "value": 0.08900394477317554
+        },
+        {
+          "category": "1",
+          "value": 0.312710911136108
+        },
+        {
+          "category": "2",
+          "value": 0.36616454229432216
+        },
+        {
+          "category": "3",
+          "value": 0.8754208754208754
+        },
+        {
+          "category": "4",
+          "value": 0.9965870307167235
+        },
+        {
+          "category": "5",
+          "value": 1.0
+        }
+      ]
+    },
+    {
+      "name": "Tasa por método de pago",
+      "column": "Payment Method",
+      "measure": "Tasa de abandono",
+      "expected": [
+        {
+          "category": "Credit Card",
+          "value": 0.14460596786534047
+        },
+        {
+          "category": "Direct Debit",
+          "value": 0.3449486763911399
+        },
+        {
+          "category": "Paper Check",
+          "value": 0.38005390835579517
+        }
+      ]
+    },
+    {
+      "name": "Tasa por plan internacional",
+      "column": "Intl Plan",
+      "measure": "Tasa de abandono",
+      "expected": [
+        {
+          "category": "no",
+          "value": 0.2707090788601723
+        },
+        {
+          "category": "yes",
+          "value": 0.2488479262672811
+        }
+      ]
+    },
+    {
+      "name": "Motivos declarados de las bajas",
+      "column": "Motivo de abandono",
+      "measure": "Bajas",
+      "expected": [
+        {
+          "category": "Attitude of service provider",
+          "value": 84
+        },
+        {
+          "category": "Attitude of support person",
+          "value": 203
+        },
+        {
+          "category": "Competitor had better devices",
+          "value": 297
+        },
+        {
+          "category": "Competitor made better offer",
+          "value": 303
+        },
+        {
+          "category": "Competitor offered higher download speeds",
+          "value": 95
+        },
+        {
+          "category": "Competitor offered more data",
+          "value": 110
+        },
+        {
+          "category": "Deceased",
+          "value": 6
+        },
+        {
+          "category": "Don't know",
+          "value": 123
+        },
+        {
+          "category": "Extra data charges",
+          "value": 37
+        },
+        {
+          "category": "Lack of affordable download/upload speed",
+          "value": 28
+        },
+        {
+          "category": "Lack of self-service on Website",
+          "value": 26
+        },
+        {
+          "category": "Limited range of services",
+          "value": 35
+        },
+        {
+          "category": "Long distance charges",
+          "value": 61
+        },
+        {
+          "category": "Moved",
+          "value": 44
+        },
+        {
+          "category": "Network reliability",
+          "value": 69
+        },
+        {
+          "category": "Poor expertise of online support",
+          "value": 30
+        },
+        {
+          "category": "Poor expertise of phone support",
+          "value": 11
+        },
+        {
+          "category": "Price too high",
+          "value": 74
+        },
+        {
+          "category": "Product dissatisfaction",
+          "value": 73
+        },
+        {
+          "category": "Service dissatisfaction",
+          "value": 60
+        },
+        {
+          "category": "Sin motivo informado",
+          "value": 27
+        }
+      ]
+    }
+  ]
+}

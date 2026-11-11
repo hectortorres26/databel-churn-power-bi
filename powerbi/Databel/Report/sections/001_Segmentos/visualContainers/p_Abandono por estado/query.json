@@ -33,6 +33,28 @@
                 "Property": "Tasa de abandono"
               },
               "Name": "Databel - Data.Tasa de abandono"
+            },
+            {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "t0"
+                  }
+                },
+                "Property": "Clientes"
+              },
+              "Name": "Databel - Data.Clientes"
+            },
+            {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "t0"
+                  }
+                },
+                "Property": "Bajas"
+              },
+              "Name": "Databel - Data.Bajas"
             }
           ],
           "OrderBy": [
@@ -57,7 +79,9 @@
               {
                 "Projections": [
                   0,
-                  1
+                  1,
+                  2,
+                  3
                 ]
               }
             ]
@@ -66,7 +90,7 @@
             "DataVolume": 3,
             "Primary": {
               "Top": {
-                "Count": 20
+                "Count": 1000
               }
             }
           },

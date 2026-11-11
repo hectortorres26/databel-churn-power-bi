@@ -1,0 +1,17 @@
+{
+  "status": "OK",
+  "pbit_sha256": "6b0dc68e0ae50a30c741f783df6537cfb77ccd3fe6816789eccdd4e8bc981967",
+  "model_definition_sha256": "9f2972aa2f33500e748167fa4cdfeb1b9e022268c69c7ac3965ccbda400ba5d1",
+  "hash_normalization": "UTF-8 sin BOM, saltos LF",
+  "model_and_report_match_reextraction": true,
+  "pages": {
+    "Resumen": 11,
+    "Segmentos": 6,
+    "Contratos y planes": 7,
+    "Motivos y calidad": 7
+  },
+  "objects_within_canvas": true,
+  "object_overlaps": 0,
+  "field_references_valid": true,
+  "scope": "Comprobación estructural. No demuestra renderizado, legibilidad ni interacción con clics."
+}

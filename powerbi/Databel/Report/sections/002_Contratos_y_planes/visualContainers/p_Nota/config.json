@@ -35,7 +35,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "El filtro Intl Active permite comparar usuarios que llaman al exterior y quienes no.",
+                    "value": "El filtro de actividad internacional compara usuarios que llaman al exterior y quienes no.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "11pt",

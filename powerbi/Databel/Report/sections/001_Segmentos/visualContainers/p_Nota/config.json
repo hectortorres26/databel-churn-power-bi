@@ -35,7 +35,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "La posición de un estado depende también del tamaño de su muestra. Las barras muestran hasta 20 categorías.",
+                    "value": "Los estados se ordenan por tasa. El tooltip permite contrastar cada porcentaje con clientes y bajas.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "11pt",
@@ -48,7 +48,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Edad y pertenencia a grupos están asociadas con el abandono; no prueban efectos causales.",
+                    "value": "El gráfico conserva los 51 estados y territorios. Los segmentos pequeños requieren cautela.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "11pt",

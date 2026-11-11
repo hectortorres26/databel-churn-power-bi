@@ -7,8 +7,8 @@
   "queryMetadata": {
     "Select": [
       {
-        "Restatement": "Bajas sin motivo",
-        "Name": "Databel - Data.Bajas sin motivo",
+        "Restatement": "Clientes retenidos",
+        "Name": "Databel - Data.Clientes retenidos",
         "Type": 1,
         "Format": "#,0"
       }
@@ -27,8 +27,8 @@
   ],
   "selects": [
     {
-      "displayName": "Bajas sin motivo",
-      "queryName": "Databel - Data.Bajas sin motivo",
+      "displayName": "Clientes retenidos",
+      "queryName": "Databel - Data.Clientes retenidos",
       "roles": {
         "Values": true
       },
@@ -43,7 +43,7 @@
               "Entity": "Databel - Data"
             }
           },
-          "Property": "Bajas sin motivo"
+          "Property": "Clientes retenidos"
         }
       },
       "format": "#,0"

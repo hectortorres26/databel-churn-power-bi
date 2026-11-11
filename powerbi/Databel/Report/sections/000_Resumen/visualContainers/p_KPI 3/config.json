@@ -60,7 +60,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Bajas sin motivo'"
+                  "Value": "'Clientes retenidos'"
                 }
               }
             },
@@ -78,7 +78,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "12D"
+                  "Value": "14D"
                 }
               }
             },
@@ -187,7 +187,7 @@
     "projections": {
       "Values": [
         {
-          "queryRef": "Databel - Data.Bajas sin motivo"
+          "queryRef": "Databel - Data.Clientes retenidos"
         }
       ]
     },
@@ -208,9 +208,9 @@
                 "Source": "t0"
               }
             },
-            "Property": "Bajas sin motivo"
+            "Property": "Clientes retenidos"
           },
-          "Name": "Databel - Data.Bajas sin motivo"
+          "Name": "Databel - Data.Clientes retenidos"
         }
       ]
     }

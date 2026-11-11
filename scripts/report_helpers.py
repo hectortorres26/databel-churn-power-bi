@@ -14,7 +14,7 @@ def color(c):return {'solid':{'color':string(c)}}
 
 def uid(s):return uuid.uuid5(uuid.NAMESPACE_URL,s).hex[:20]
 
-def title(text):return [{'properties':{'show':lit('true'),'text':string(text),'fontColor':color('#18354A'),'fontSize':lit('12D'),'fontFamily':string('Segoe UI'),'alignment':string('left')}}]
+def title(text):return [{'properties':{'show':lit('true'),'text':string(text),'fontColor':color('#18354A'),'fontSize':lit('14D'),'fontFamily':string('Segoe UI'),'alignment':string('left')}}]
 
 def visual(page,name,kind,fields,x,y,width,height,caption=None):
  """fields=(role,table,field,is_measure,format); generates matching query and bindings."""
@@ -26,7 +26,6 @@ def visual(page,name,kind,fields,x,y,width,height,caption=None):
   sv['objects']={'labels':[{'properties':{'fontSize':lit('29D'),'color':color('#087F8C'),'labelDisplayUnits':lit('1D'),'labelPrecision':lit(str(precision)+'L')}}],'categoryLabels':[{'properties':{'show':lit('false')}}]}
  if kind=='slicer':
   sv['objects']={'data':[{'properties':{'mode':string('Dropdown')}}]}
-  sv['vcObjects']['title']=[{'properties':{'show':lit('false')}}]
  if kind in ['clusteredBarChart','clusteredColumnChart','lineChart']:
   sv['objects']={'dataPoint':[{'properties':{'defaultColor':color('#087F8C')}}],'categoryAxis':[{'properties':{'show':lit('true'),'fontSize':lit('10D'),'labelColor':color('#40576A')}}],'valueAxis':[{'properties':{'show':lit('true'),'fontSize':lit('10D')}}],'legend':[{'properties':{'show':lit('false')}}]}
  refs=[];sels=[];sources=[];projections={};ordering={};selects=[];metas=[]
@@ -40,16 +39,16 @@ def visual(page,name,kind,fields,x,y,width,height,caption=None):
   selects.append({'displayName':f,'queryName':ref,'roles':{role:True},'type':{'category':None,'underlyingType':underlying},'expr':expr2,**({'format':fmt} if fmt else {})})
   metas.append({'Restatement':f,'Name':ref,'Type':1 if measure else 2048,**({'Format':fmt} if fmt else {})})
  query={'Version':2,'From':sources,'Select':sels}
- if len(sels)==2 and kind!='slicer':query['OrderBy']=[{'Direction':2,'Expression':{k:v for k,v in sels[1].items() if k!='Name'}}]
+ if len(sels)>=2 and kind!='slicer':query['OrderBy']=[{'Direction':2,'Expression':{k:v for k,v in sels[1].items() if k!='Name'}}]
  if kind=='lineChart':query['OrderBy']=[{'Direction':1,'Expression':{k:v for k,v in sels[0].items() if k!='Name'}}]
  sv['projections']=projections;sv['prototypeQuery']=query
  folder=page/'visualContainers'/('p_'+name);save(folder/'config.json',vc);save(folder/'visualContainer.json',pos);save(folder/'filters.json',[])
- binding={'Primary':{'Groupings':[{'Projections':list(range(len(sels)))}]},'DataReduction':{'DataVolume':3,'Primary':{'Top':{'Count':1000 if kind=='lineChart' else 20} if kind!='slicer' else {}}},'Version':1}
+ binding={'Primary':{'Groupings':[{'Projections':list(range(len(sels)))}]},'DataReduction':{'DataVolume':3,'Primary':{'Top':{'Count':1000} if kind!='slicer' else {}}},'Version':1}
  save(folder/'query.json',{'Commands':[{'SemanticQueryDataShapeCommand':{'Query':query,'Binding':binding,'ExecutionMetricsKind':1}}]})
  save(folder/'dataTransforms.json',{'projectionOrdering':ordering,'queryMetadata':{'Select':metas},'visualElements':[{'DataRoles':[{'Name':f[0],'Projection':i,'isActive':not f[3]} for i,f in enumerate(fields)]}],'selects':selects})
 
 def textbox(page,name,lines,x,y,w,h,size=14,dark=False):
- # The screenshot shows the two-line header overflowing vertically at 25/18 pt.
+ # Jerarquía tipográfica para mantener las dos líneas dentro de la cabecera.
  if dark:size=24
  pos={'x':x,'y':y,'width':w,'height':h,'z':0};cfg={'name':uid(str(page)+name),'layouts':[{'id':0,'position':pos}],'singleVisual':{'visualType':'textbox','objects':{'general':[{'properties':{'paragraphs':[{'textRuns':[{'value':line,'textStyle':{'fontFamily':'Segoe UI','fontSize':str(size if i==0 else max(11,size-7))+'pt','fontWeight':'bold' if i==0 else 'normal','color':'#FFFFFF' if dark else '#30485B'}}]} for i,line in enumerate(lines)]}}]},'vcObjects':{'background':[{'properties':{'show':lit('true'),'color':color('#15354A' if dark else '#EDF4F8'),'transparency':lit('0D')}}]}}}
  if dark:

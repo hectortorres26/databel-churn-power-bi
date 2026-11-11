@@ -19,9 +19,9 @@
                     "Source": "t0"
                   }
                 },
-                "Property": "Bajas sin motivo"
+                "Property": "Clientes retenidos"
               },
-              "Name": "Databel - Data.Bajas sin motivo"
+              "Name": "Databel - Data.Clientes retenidos"
             }
           ]
         },
@@ -39,7 +39,7 @@
             "DataVolume": 3,
             "Primary": {
               "Top": {
-                "Count": 20
+                "Count": 1000
               }
             }
           },

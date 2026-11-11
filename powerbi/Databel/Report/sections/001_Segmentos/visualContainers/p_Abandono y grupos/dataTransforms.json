@@ -5,6 +5,10 @@
     ],
     "Y": [
       1
+    ],
+    "Tooltips": [
+      2,
+      3
     ]
   },
   "queryMetadata": {
@@ -19,6 +23,18 @@
         "Name": "Databel - Data.Tasa de abandono",
         "Type": 1,
         "Format": "0.00%"
+      },
+      {
+        "Restatement": "Clientes",
+        "Name": "Databel - Data.Clientes",
+        "Type": 1,
+        "Format": "#,0"
+      },
+      {
+        "Restatement": "Bajas",
+        "Name": "Databel - Data.Bajas",
+        "Type": 1,
+        "Format": "#,0"
       }
     ]
   },
@@ -33,6 +49,16 @@
         {
           "Name": "Y",
           "Projection": 1,
+          "isActive": false
+        },
+        {
+          "Name": "Tooltips",
+          "Projection": 2,
+          "isActive": false
+        },
+        {
+          "Name": "Tooltips",
+          "Projection": 3,
           "isActive": false
         }
       ]
@@ -81,6 +107,50 @@
         }
       },
       "format": "0.00%"
+    },
+    {
+      "displayName": "Clientes",
+      "queryName": "Databel - Data.Clientes",
+      "roles": {
+        "Tooltips": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 259
+      },
+      "expr": {
+        "Measure": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "Databel - Data"
+            }
+          },
+          "Property": "Clientes"
+        }
+      },
+      "format": "#,0"
+    },
+    {
+      "displayName": "Bajas",
+      "queryName": "Databel - Data.Bajas",
+      "roles": {
+        "Tooltips": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 259
+      },
+      "expr": {
+        "Measure": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "Databel - Data"
+            }
+          },
+          "Property": "Bajas"
+        }
+      },
+      "format": "#,0"
     }
   ]
 }

@@ -5,9 +5,9 @@
       "id": 0,
       "position": {
         "x": 24,
-        "y": 680,
+        "y": 690,
         "width": 1232,
-        "height": 145,
+        "height": 135,
         "z": 0
       }
     }
@@ -22,7 +22,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Cómo leer los indicadores",
+                    "value": "Cómo leer el diagnóstico",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "18pt",
@@ -35,7 +35,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Tasa de abandono = bajas / clientes del segmento seleccionado. Las categorías muestran conteos de bajas.",
+                    "value": "Tasa = bajas / clientes del segmento. Al pasar por una barra de tasa, el tooltip muestra clientes y bajas.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "11pt",
@@ -48,7 +48,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Los motivos ausentes se conservan. Los filtros modifican los indicadores; elimina la selección para volver al total.",
+                    "value": "Los filtros de esta página se combinan. Borra sus selecciones para recuperar los totales.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "11pt",
@@ -61,7 +61,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Adaptación propia del esquema inicial de DataCamp. Datos ficticios; asociaciones, no causas demostradas.",
+                    "value": "Datos ficticios de DataCamp; instantánea sin dimensión temporal. Las asociaciones no prueban causalidad.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "11pt",

@@ -38,12 +38,12 @@ Los usuarios con actividad internacional y sin plan internacional presentan un 4
 
 ## Páginas del informe
 
-1. **Resumen:** clientes, bajas, tasa y motivos ausentes; comparación por contrato y filtros de estado y edad.
+1. **Resumen:** clientes, bajas, tasa y clientes retenidos; comparación por contrato y filtros de estado, edad y contrato.
 2. **Segmentos:** tasas y volumen por edad, comparación geográfica y pertenencia a grupos.
 3. **Contratos y planes:** pagos, planes internacionales y de datos, atención al cliente y filtro de actividad internacional.
 4. **Motivos y calidad:** desglose de motivos y controles de integridad.
 
-El reporte usa barras para la comparación de estados. Los rankings visuales limitan categorías para conservar legibilidad; las tablas CSV contienen el detalle completo.
+El reporte usa barras para comparar estados y conserva todas las categorías: 51 estados y territorios y 21 motivos. Las tasas incorporan clientes y bajas en los tooltips para dar contexto al porcentaje. Las tablas CSV permiten consultar el detalle completo fuera de Power BI.
 
 ## Cómo abrir y actualizar
 
@@ -65,6 +65,8 @@ La primera exploración permitió calcular la tasa global y comparar contratos. 
 
 También distinguí la antigüedad de la cuenta de una fecha de observación. El dataset es una instantánea: no construí una tendencia mensual a partir de la antigüedad ni añadí predicciones que el ejercicio no requiere.
 
+En la revisión añadí el filtro de contrato al resumen y el indicador de clientes retenidos; hice visibles los títulos de los filtros y aumenté la tipografía de los gráficos. También incorporé clientes y bajas a los tooltips de las tasas y retiré el límite de 20 categorías para no omitir segmentos. La verificación visual de estos cambios sigue pendiente; el modelo y los cálculos sí se comprobaron.
+
 ## Validación y estado
 
 - Auditoría con pandas y recuento independiente con la biblioteca estándar: correctos.
@@ -72,7 +74,9 @@ También distinguí la antigüedad de la cuenta de una fecha de observación. El
 - Plantilla compilada correctamente; contiene cuatro páginas y nueve medidas.
 - Reapertura técnica del archivo PBIT con pbi-tools: recuperados correctamente el modelo, las cuatro páginas, las nueve medidas y el parámetro `FuenteCSV`. Se confirmó la exclusión de `Phone Number`.
 - Consultas DAX ejecutadas correctamente en el modelo inicial de DataCamp, mediante su laboratorio de Power BI en Edge: clientes, bajas, tasa, duplicados, motivos vacíos y los tres tipos de contrato coinciden con la auditoría. Consulta la [validación del motor](docs/validacion_edge.md).
-- **Pendiente:** cargar la plantilla propia de cuatro páginas y verificar sus transformaciones, visuales e interacciones. El laboratorio utiliza archivos de una máquina remota y no se observó un control para cargar la plantilla local. Validar consultas sobre el modelo inicial no equivale a validar ese archivo PBIT.
+- **Modelo propio cargado en Power BI Desktop:** partición lista; nueve medidas y transformación Power Query coincidentes con la definición publicada. Las 13 pruebas de contextos de filtro y las 11 combinaciones de campos y medidas de los gráficos coinciden con el CSV. Incluyen filtros combinados, un contexto vacío y recuperación del total.
+- **Plantilla revisada:** compilada y reextraída; modelo idéntico al comprobado, páginas y referencias revisadas técnicamente. Los resultados y el alcance están en [Validación del dashboard](docs/validacion_dashboard.md) y en [la evidencia de consultas](output/validacion_motor.json).
+- **Pendiente de revisión visual:** comprobar páginas, selección de filtros con clics, tooltips y legibilidad dentro de Power BI. La captura y accesibilidad de la ventana local no respondieron. Las pruebas de consultas validan el cálculo con filtros; no demuestran que los controles ni el renderizado funcionen correctamente.
 - DataCamp mostraba los tres capítulos al 100 % **antes** de esta adaptación. No presento ese progreso previo como aprobación de este nuevo archivo por el corrector.
 
 ## Conclusiones y límites

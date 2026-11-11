@@ -35,7 +35,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Una fila por cliente. No se borraron las bajas cuyo motivo falta; se agruparon como Sin motivo informado.",
+                    "value": "Se conservan los 21 motivos, incluidos los 27 casos sin información. El detalle también está en el repositorio.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "11pt",
@@ -48,7 +48,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Las celdas sin motivo de quienes permanecen no son bajas adicionales. Se excluyó el teléfono del modelo.",
+                    "value": "Las celdas vacías de clientes retenidos no son bajas. Se excluyó el teléfono y se ocultó el identificador de cliente.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "11pt",
@@ -61,7 +61,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "DataCamp: Case Study Analyzing Customer Churn in Power BI. Consulta el README para fuentes y validación.",
+                    "value": "Caso educativo de DataCamp. Consulta el README para fuentes, reproducción y estado de validación.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "11pt",

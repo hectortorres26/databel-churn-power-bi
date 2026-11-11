@@ -78,7 +78,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "12D"
+                  "Value": "14D"
                 }
               }
             },
@@ -225,6 +225,14 @@
         {
           "queryRef": "Databel - Data.Tasa de abandono"
         }
+      ],
+      "Tooltips": [
+        {
+          "queryRef": "Databel - Data.Clientes"
+        },
+        {
+          "queryRef": "Databel - Data.Bajas"
+        }
       ]
     },
     "prototypeQuery": {
@@ -258,6 +266,28 @@
             "Property": "Tasa de abandono"
           },
           "Name": "Databel - Data.Tasa de abandono"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "Clientes"
+          },
+          "Name": "Databel - Data.Clientes"
+        },
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "t0"
+              }
+            },
+            "Property": "Bajas"
+          },
+          "Name": "Databel - Data.Bajas"
         }
       ],
       "OrderBy": [

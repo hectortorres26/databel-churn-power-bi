@@ -1,0 +1,325 @@
+{
+  "scope": "Modelo propio cargado en Power BI Desktop; consultas de solo lectura",
+  "model_definition_sha256": "9f2972aa2f33500e748167fa4cdfeb1b9e022268c69c7ac3965ccbda400ba5d1",
+  "hash_normalization": "UTF-8 sin BOM, saltos LF",
+  "source_matches_loaded_model": true,
+  "partitions_ready": true,
+  "measures": 9,
+  "filter_cases": [
+    {
+      "status": "OK",
+      "filters": {},
+      "values": {
+        "[Clientes]": 6687,
+        "[Bajas]": 1796,
+        "[Tasa de abandono]": 0.2685808284731569,
+        "[Clientes retenidos]": 4891,
+        "[Bajas sin motivo]": 27,
+        "[Cargo mensual medio]": 31.030357409899807,
+        "[Llamadas de servicio medias]": 0.9156572454015254,
+        "[Filas]": 6687,
+        "[IDs duplicados]": 0
+      },
+      "name": "Total"
+    },
+    {
+      "status": "OK",
+      "filters": {
+        "Contract Type": "Month-to-Month"
+      },
+      "values": {
+        "[Clientes]": 3411,
+        "[Bajas]": 1579,
+        "[Tasa de abandono]": 0.4629141014365289,
+        "[Clientes retenidos]": 1832,
+        "[Bajas sin motivo]": 11,
+        "[Cargo mensual medio]": 31.796247434769864,
+        "[Llamadas de servicio medias]": 1.3095866314863676,
+        "[Filas]": 3411,
+        "[IDs duplicados]": 0
+      },
+      "name": "Contrato mensual"
+    },
+    {
+      "status": "OK",
+      "filters": {
+        "Contract Type": "One Year"
+      },
+      "values": {
+        "[Clientes]": 1479,
+        "[Bajas]": 167,
+        "[Tasa de abandono]": 0.11291413116970926,
+        "[Clientes retenidos]": 1312,
+        "[Bajas sin motivo]": 10,
+        "[Cargo mensual medio]": 30.84448951994591,
+        "[Llamadas de servicio medias]": 0.581473968897904,
+        "[Filas]": 1479,
+        "[IDs duplicados]": 0
+      },
+      "name": "Contrato anual"
+    },
+    {
+      "status": "OK",
+      "filters": {
+        "Contract Type": "Two Year"
+      },
+      "values": {
+        "[Clientes]": 1797,
+        "[Bajas]": 50,
+        "[Tasa de abandono]": 0.027824151363383415,
+        "[Clientes retenidos]": 1747,
+        "[Bajas sin motivo]": 6,
+        "[Cargo mensual medio]": 29.72954924874791,
+        "[Llamadas de servicio medias]": 0.442960489705064,
+        "[Filas]": 1797,
+        "[IDs duplicados]": 0
+      },
+      "name": "Contrato dos años"
+    },
+    {
+      "status": "OK",
+      "filters": {
+        "Grupo de edad": "Menores de 30"
+      },
+      "values": {
+        "[Clientes]": 1287,
+        "[Bajas]": 296,
+        "[Tasa de abandono]": 0.22999222999222999,
+        "[Clientes retenidos]": 991,
+        "[Bajas sin motivo]": 5,
+        "[Cargo mensual medio]": 29.553224553224553,
+        "[Llamadas de servicio medias]": 0.8368298368298368,
+        "[Filas]": 1287,
+        "[IDs duplicados]": 0
+      },
+      "name": "Edad menor de 30"
+    },
+    {
+      "status": "OK",
+      "filters": {
+        "Grupo de edad": "65 o más"
+      },
+      "values": {
+        "[Clientes]": 1256,
+        "[Bajas]": 483,
+        "[Tasa de abandono]": 0.38455414012738853,
+        "[Clientes retenidos]": 773,
+        "[Bajas sin motivo]": 5,
+        "[Cargo mensual medio]": 37.27468152866242,
+        "[Llamadas de servicio medias]": 1.1878980891719746,
+        "[Filas]": 1256,
+        "[IDs duplicados]": 0
+      },
+      "name": "Edad 65 o más"
+    },
+    {
+      "status": "OK",
+      "filters": {
+        "State": "CA"
+      },
+      "values": {
+        "[Clientes]": 68,
+        "[Bajas]": 43,
+        "[Tasa de abandono]": 0.6323529411764706,
+        "[Clientes retenidos]": 25,
+        "[Bajas sin motivo]": 27,
+        "[Cargo mensual medio]": 32.44117647058823,
+        "[Llamadas de servicio medias]": 0.6470588235294118,
+        "[Filas]": 68,
+        "[IDs duplicados]": 0
+      },
+      "name": "Estado CA"
+    },
+    {
+      "status": "OK",
+      "filters": {
+        "State": "CA",
+        "Contract Type": "Month-to-Month"
+      },
+      "values": {
+        "[Clientes]": 33,
+        "[Bajas]": 26,
+        "[Tasa de abandono]": 0.7878787878787878,
+        "[Clientes retenidos]": 7,
+        "[Bajas sin motivo]": 11,
+        "[Cargo mensual medio]": 32.36363636363637,
+        "[Llamadas de servicio medias]": 0.8787878787878788,
+        "[Filas]": 33,
+        "[IDs duplicados]": 0
+      },
+      "name": "CA y mensual"
+    },
+    {
+      "status": "OK",
+      "filters": {
+        "Intl Active": "Yes",
+        "Intl Plan": "no"
+      },
+      "values": {
+        "[Clientes]": 2097,
+        "[Bajas]": 846,
+        "[Tasa de abandono]": 0.4034334763948498,
+        "[Clientes retenidos]": 1251,
+        "[Bajas sin motivo]": 9,
+        "[Cargo mensual medio]": 32.182164997615644,
+        "[Llamadas de servicio medias]": 1.251311397234144,
+        "[Filas]": 2097,
+        "[IDs duplicados]": 0
+      },
+      "name": "Actividad internacional sin plan"
+    },
+    {
+      "status": "OK",
+      "filters": {
+        "Intl Active": "Yes",
+        "Intl Plan": "yes"
+      },
+      "values": {
+        "[Clientes]": 474,
+        "[Bajas]": 36,
+        "[Tasa de abandono]": 0.0759493670886076,
+        "[Clientes retenidos]": 438,
+        "[Bajas sin motivo]": 4,
+        "[Cargo mensual medio]": 28.40295358649789,
+        "[Llamadas de servicio medias]": 0.48945147679324896,
+        "[Filas]": 474,
+        "[IDs duplicados]": 0
+      },
+      "name": "Actividad internacional con plan"
+    },
+    {
+      "status": "OK",
+      "filters": {
+        "Churn Label": "No"
+      },
+      "values": {
+        "[Clientes]": 4891,
+        "[Bajas]": null,
+        "[Tasa de abandono]": null,
+        "[Clientes retenidos]": 4891,
+        "[Bajas sin motivo]": null,
+        "[Cargo mensual medio]": 28.911470047025148,
+        "[Llamadas de servicio medias]": 0.37211204252709057,
+        "[Filas]": 4891,
+        "[IDs duplicados]": 0
+      },
+      "name": "Solo clientes retenidos"
+    },
+    {
+      "status": "OK",
+      "filters": {
+        "State": "__SIN_ESTADO__"
+      },
+      "values": {
+        "[Clientes]": null,
+        "[Bajas]": null,
+        "[Tasa de abandono]": null,
+        "[Clientes retenidos]": null,
+        "[Bajas sin motivo]": null,
+        "[Cargo mensual medio]": null,
+        "[Llamadas de servicio medias]": null,
+        "[Filas]": null,
+        "[IDs duplicados]": null
+      },
+      "name": "Sin registros"
+    },
+    {
+      "status": "OK",
+      "filters": {},
+      "values": {
+        "[Clientes]": 6687,
+        "[Bajas]": 1796,
+        "[Tasa de abandono]": 0.2685808284731569,
+        "[Clientes retenidos]": 4891,
+        "[Bajas sin motivo]": 27,
+        "[Cargo mensual medio]": 31.030357409899807,
+        "[Llamadas de servicio medias]": 0.9156572454015254,
+        "[Filas]": 6687,
+        "[IDs duplicados]": 0
+      },
+      "name": "Total restablecido"
+    }
+  ],
+  "visual_cases": [
+    {
+      "categories": 3,
+      "measure": "Tasa de abandono",
+      "status": "OK",
+      "column": "Contract Type",
+      "name": "Abandono por contrato"
+    },
+    {
+      "categories": 6,
+      "measure": "Bajas",
+      "status": "OK",
+      "column": "Categoria de abandono",
+      "name": "Bajas por categoría"
+    },
+    {
+      "categories": 3,
+      "measure": "Tasa de abandono",
+      "status": "OK",
+      "column": "Grupo de edad",
+      "name": "Abandono por edad"
+    },
+    {
+      "categories": 51,
+      "measure": "Tasa de abandono",
+      "status": "OK",
+      "column": "State",
+      "name": "Abandono por estado"
+    },
+    {
+      "categories": 2,
+      "measure": "Tasa de abandono",
+      "status": "OK",
+      "column": "Group",
+      "name": "Abandono y grupos"
+    },
+    {
+      "categories": 3,
+      "measure": "Clientes",
+      "status": "OK",
+      "column": "Grupo de edad",
+      "name": "Clientes por edad"
+    },
+    {
+      "categories": 2,
+      "measure": "Tasa de abandono",
+      "status": "OK",
+      "column": "Unlimited Data Plan",
+      "name": "Tasa por datos ilimitados"
+    },
+    {
+      "categories": 6,
+      "measure": "Tasa de abandono",
+      "status": "OK",
+      "column": "Customer Service Calls",
+      "name": "Tasa por llamadas a servicio"
+    },
+    {
+      "categories": 3,
+      "measure": "Tasa de abandono",
+      "status": "OK",
+      "column": "Payment Method",
+      "name": "Tasa por método de pago"
+    },
+    {
+      "categories": 2,
+      "measure": "Tasa de abandono",
+      "status": "OK",
+      "column": "Intl Plan",
+      "name": "Tasa por plan internacional"
+    },
+    {
+      "categories": 21,
+      "measure": "Bajas",
+      "status": "OK",
+      "column": "Motivo de abandono",
+      "name": "Motivos declarados de las bajas"
+    }
+  ],
+  "failures": [],
+  "status": "OK",
+  "ui_validation": "Pendiente: estas consultas no prueban clics, tooltips ni renderizado en Power BI."
+}
