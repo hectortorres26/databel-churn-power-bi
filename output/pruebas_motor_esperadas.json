@@ -292,7 +292,463 @@
       ]
     },
     {
-      "name": "Abandono por estado",
+      "name": "Abandono según pertenencia a grupo",
+      "column": "Group",
+      "measure": "Tasa de abandono",
+      "expected": [
+        {
+          "category": "No",
+          "value": 0.32849399922570655
+        },
+        {
+          "category": "Yes",
+          "value": 0.0650887573964497
+        }
+      ]
+    },
+    {
+      "name": "Clientes por edad",
+      "column": "Grupo de edad",
+      "measure": "Clientes",
+      "expected": [
+        {
+          "category": "30 a 64",
+          "value": 4144
+        },
+        {
+          "category": "65 o más",
+          "value": 1256
+        },
+        {
+          "category": "Menores de 30",
+          "value": 1287
+        }
+      ]
+    },
+    {
+      "name": "Estado · tasa y tamaño del segmento / Clientes",
+      "column": "State",
+      "measure": "Clientes",
+      "expected": [
+        {
+          "category": "AK",
+          "value": 104
+        },
+        {
+          "category": "AL",
+          "value": 161
+        },
+        {
+          "category": "AR",
+          "value": 110
+        },
+        {
+          "category": "AZ",
+          "value": 128
+        },
+        {
+          "category": "CA",
+          "value": 68
+        },
+        {
+          "category": "CO",
+          "value": 132
+        },
+        {
+          "category": "CT",
+          "value": 148
+        },
+        {
+          "category": "DC",
+          "value": 108
+        },
+        {
+          "category": "DE",
+          "value": 122
+        },
+        {
+          "category": "FL",
+          "value": 127
+        },
+        {
+          "category": "GA",
+          "value": 108
+        },
+        {
+          "category": "HI",
+          "value": 106
+        },
+        {
+          "category": "IA",
+          "value": 90
+        },
+        {
+          "category": "ID",
+          "value": 147
+        },
+        {
+          "category": "IL",
+          "value": 116
+        },
+        {
+          "category": "IN",
+          "value": 143
+        },
+        {
+          "category": "KS",
+          "value": 141
+        },
+        {
+          "category": "KY",
+          "value": 118
+        },
+        {
+          "category": "LA",
+          "value": 103
+        },
+        {
+          "category": "MA",
+          "value": 131
+        },
+        {
+          "category": "MD",
+          "value": 140
+        },
+        {
+          "category": "ME",
+          "value": 124
+        },
+        {
+          "category": "MI",
+          "value": 146
+        },
+        {
+          "category": "MN",
+          "value": 168
+        },
+        {
+          "category": "MO",
+          "value": 127
+        },
+        {
+          "category": "MS",
+          "value": 130
+        },
+        {
+          "category": "MT",
+          "value": 137
+        },
+        {
+          "category": "NC",
+          "value": 136
+        },
+        {
+          "category": "ND",
+          "value": 124
+        },
+        {
+          "category": "NE",
+          "value": 122
+        },
+        {
+          "category": "NH",
+          "value": 112
+        },
+        {
+          "category": "NJ",
+          "value": 137
+        },
+        {
+          "category": "NM",
+          "value": 124
+        },
+        {
+          "category": "NV",
+          "value": 132
+        },
+        {
+          "category": "NY",
+          "value": 167
+        },
+        {
+          "category": "OH",
+          "value": 158
+        },
+        {
+          "category": "OK",
+          "value": 123
+        },
+        {
+          "category": "OR",
+          "value": 156
+        },
+        {
+          "category": "PA",
+          "value": 90
+        },
+        {
+          "category": "RI",
+          "value": 131
+        },
+        {
+          "category": "SC",
+          "value": 120
+        },
+        {
+          "category": "SD",
+          "value": 120
+        },
+        {
+          "category": "TN",
+          "value": 106
+        },
+        {
+          "category": "TX",
+          "value": 145
+        },
+        {
+          "category": "UT",
+          "value": 144
+        },
+        {
+          "category": "VA",
+          "value": 155
+        },
+        {
+          "category": "VT",
+          "value": 147
+        },
+        {
+          "category": "WA",
+          "value": 132
+        },
+        {
+          "category": "WI",
+          "value": 156
+        },
+        {
+          "category": "WV",
+          "value": 213
+        },
+        {
+          "category": "WY",
+          "value": 154
+        }
+      ]
+    },
+    {
+      "name": "Estado · tasa y tamaño del segmento / Bajas",
+      "column": "State",
+      "measure": "Bajas",
+      "expected": [
+        {
+          "category": "AK",
+          "value": 30
+        },
+        {
+          "category": "AL",
+          "value": 46
+        },
+        {
+          "category": "AR",
+          "value": 27
+        },
+        {
+          "category": "AZ",
+          "value": 30
+        },
+        {
+          "category": "CA",
+          "value": 43
+        },
+        {
+          "category": "CO",
+          "value": 29
+        },
+        {
+          "category": "CT",
+          "value": 38
+        },
+        {
+          "category": "DC",
+          "value": 21
+        },
+        {
+          "category": "DE",
+          "value": 37
+        },
+        {
+          "category": "FL",
+          "value": 27
+        },
+        {
+          "category": "GA",
+          "value": 25
+        },
+        {
+          "category": "HI",
+          "value": 28
+        },
+        {
+          "category": "IA",
+          "value": 24
+        },
+        {
+          "category": "ID",
+          "value": 41
+        },
+        {
+          "category": "IL",
+          "value": 33
+        },
+        {
+          "category": "IN",
+          "value": 42
+        },
+        {
+          "category": "KS",
+          "value": 36
+        },
+        {
+          "category": "KY",
+          "value": 36
+        },
+        {
+          "category": "LA",
+          "value": 25
+        },
+        {
+          "category": "MA",
+          "value": 33
+        },
+        {
+          "category": "MD",
+          "value": 46
+        },
+        {
+          "category": "ME",
+          "value": 29
+        },
+        {
+          "category": "MI",
+          "value": 40
+        },
+        {
+          "category": "MN",
+          "value": 38
+        },
+        {
+          "category": "MO",
+          "value": 36
+        },
+        {
+          "category": "MS",
+          "value": 37
+        },
+        {
+          "category": "MT",
+          "value": 43
+        },
+        {
+          "category": "NC",
+          "value": 28
+        },
+        {
+          "category": "ND",
+          "value": 31
+        },
+        {
+          "category": "NE",
+          "value": 40
+        },
+        {
+          "category": "NH",
+          "value": 36
+        },
+        {
+          "category": "NJ",
+          "value": 37
+        },
+        {
+          "category": "NM",
+          "value": 30
+        },
+        {
+          "category": "NV",
+          "value": 36
+        },
+        {
+          "category": "NY",
+          "value": 39
+        },
+        {
+          "category": "OH",
+          "value": 55
+        },
+        {
+          "category": "OK",
+          "value": 24
+        },
+        {
+          "category": "OR",
+          "value": 48
+        },
+        {
+          "category": "PA",
+          "value": 30
+        },
+        {
+          "category": "RI",
+          "value": 33
+        },
+        {
+          "category": "SC",
+          "value": 36
+        },
+        {
+          "category": "SD",
+          "value": 27
+        },
+        {
+          "category": "TN",
+          "value": 24
+        },
+        {
+          "category": "TX",
+          "value": 42
+        },
+        {
+          "category": "UT",
+          "value": 36
+        },
+        {
+          "category": "VA",
+          "value": 42
+        },
+        {
+          "category": "VT",
+          "value": 39
+        },
+        {
+          "category": "WA",
+          "value": 29
+        },
+        {
+          "category": "WI",
+          "value": 39
+        },
+        {
+          "category": "WV",
+          "value": 57
+        },
+        {
+          "category": "WY",
+          "value": 38
+        }
+      ]
+    },
+    {
+      "name": "Estado · tasa y tamaño del segmento / Tasa de abandono",
       "column": "State",
       "measure": "Tasa de abandono",
       "expected": [
@@ -503,41 +959,7 @@
       ]
     },
     {
-      "name": "Abandono y grupos",
-      "column": "Group",
-      "measure": "Tasa de abandono",
-      "expected": [
-        {
-          "category": "No",
-          "value": 0.32849399922570655
-        },
-        {
-          "category": "Yes",
-          "value": 0.0650887573964497
-        }
-      ]
-    },
-    {
-      "name": "Clientes por edad",
-      "column": "Grupo de edad",
-      "measure": "Clientes",
-      "expected": [
-        {
-          "category": "30 a 64",
-          "value": 4144
-        },
-        {
-          "category": "65 o más",
-          "value": 1256
-        },
-        {
-          "category": "Menores de 30",
-          "value": 1287
-        }
-      ]
-    },
-    {
-      "name": "Tasa por datos ilimitados",
+      "name": "Abandono por datos ilimitados",
       "column": "Unlimited Data Plan",
       "measure": "Tasa de abandono",
       "expected": [
@@ -552,7 +974,7 @@
       ]
     },
     {
-      "name": "Tasa por llamadas a servicio",
+      "name": "Abandono por llamadas a soporte",
       "column": "Customer Service Calls",
       "measure": "Tasa de abandono",
       "expected": [
@@ -583,7 +1005,7 @@
       ]
     },
     {
-      "name": "Tasa por método de pago",
+      "name": "Abandono por método de pago",
       "column": "Payment Method",
       "measure": "Tasa de abandono",
       "expected": [
@@ -602,7 +1024,7 @@
       ]
     },
     {
-      "name": "Tasa por plan internacional",
+      "name": "Abandono por plan internacional",
       "column": "Intl Plan",
       "measure": "Tasa de abandono",
       "expected": [
@@ -617,7 +1039,38 @@
       ]
     },
     {
-      "name": "Motivos declarados de las bajas",
+      "name": "Bajas por categoría",
+      "column": "Categoria de abandono",
+      "measure": "Bajas",
+      "expected": [
+        {
+          "category": "Attitude",
+          "value": 287
+        },
+        {
+          "category": "Competitor",
+          "value": 805
+        },
+        {
+          "category": "Dissatisfaction",
+          "value": 286
+        },
+        {
+          "category": "Other",
+          "value": 191
+        },
+        {
+          "category": "Price",
+          "value": 200
+        },
+        {
+          "category": "Sin motivo informado",
+          "value": 27
+        }
+      ]
+    },
+    {
+      "name": "Detalle completo de motivos / Bajas",
       "column": "Motivo de abandono",
       "measure": "Bajas",
       "expected": [

@@ -1,14 +1,14 @@
 {
   "status": "OK",
-  "pbit_sha256": "61e18f665217aea9040f67a4cf977e98c9e6895210184e39f69ff1b40a3ee560",
+  "pbit_sha256": "873a461404c44bb1c709c7a78e31910d949fe1ba8bdd796168a9a0495af34d16",
   "model_definition_sha256": "9f2972aa2f33500e748167fa4cdfeb1b9e022268c69c7ac3965ccbda400ba5d1",
   "hash_normalization": "UTF-8 sin BOM, saltos LF",
   "model_and_report_match_reextraction": true,
   "pages": {
-    "Resumen": 11,
-    "Segmentos": 6,
-    "Contratos y planes": 7,
-    "Motivos y calidad": 7
+    "Resumen": 13,
+    "Segmentos": 13,
+    "Contratos y planes": 11,
+    "Motivos y calidad": 9
   },
   "objects_within_canvas": true,
   "object_overlaps": 0,

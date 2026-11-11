@@ -66,7 +66,7 @@ try {
  $sha=[Security.Cryptography.SHA256]::Create()
  $modelHash=([BitConverter]::ToString($sha.ComputeHash([Text.Encoding]::UTF8.GetBytes([IO.File]::ReadAllText($definitionPath).Replace("`r`n","`n"))))).Replace('-','').ToLower()
  $sha.Dispose()
- $result=[ordered]@{scope='Modelo propio cargado en Power BI Desktop; consultas de solo lectura';model_definition_sha256=$modelHash;hash_normalization='UTF-8 sin BOM, saltos LF';source_matches_loaded_model=$true;partitions_ready=$true;measures=$table.Measures.Count;filter_cases=$filterResults;visual_cases=$visualResults;failures=$failures;status=$(if($failures.Count){'ERROR'}else{'OK'});ui_validation='Pendiente: estas consultas no prueban clics, tooltips ni renderizado en Power BI.'}
+ $result=[ordered]@{scope='Modelo propio cargado en Power BI Desktop; consultas de solo lectura';model_definition_sha256=$modelHash;hash_normalization='UTF-8 sin BOM, saltos LF';source_matches_loaded_model=$true;partitions_ready=$true;measures=$table.Measures.Count;filter_cases=$filterResults;visual_cases=$visualResults;failures=$failures;status=$(if($failures.Count){'ERROR'}else{'OK'});ui_validation='Fuera del alcance de estas consultas. Consultar el registro de validacion nativa para la revision visual y de segmentadores.'}
  $result | ConvertTo-Json -Depth 12 | Set-Content -Encoding UTF8 -LiteralPath (Join-Path $ProjectRoot 'output/validacion_motor.json')
  @{status=$result.status;filters=$filterResults.Count;visuals=$visualResults.Count;failures=$failures} | ConvertTo-Json -Depth 4
  if($failures.Count){exit 1}

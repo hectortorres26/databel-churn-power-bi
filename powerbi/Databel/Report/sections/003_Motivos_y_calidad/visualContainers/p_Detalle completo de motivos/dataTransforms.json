@@ -1,0 +1,84 @@
+{
+  "projectionOrdering": {
+    "Values": [
+      0,
+      1
+    ]
+  },
+  "queryMetadata": {
+    "Select": [
+      {
+        "Restatement": "Motivo de abandono",
+        "Name": "Databel - Data.Motivo de abandono",
+        "Type": 2048
+      },
+      {
+        "Restatement": "Bajas",
+        "Name": "Databel - Data.Bajas",
+        "Type": 1,
+        "Format": "#,0"
+      }
+    ]
+  },
+  "visualElements": [
+    {
+      "DataRoles": [
+        {
+          "Name": "Values",
+          "Projection": 0,
+          "isActive": true
+        },
+        {
+          "Name": "Values",
+          "Projection": 1,
+          "isActive": false
+        }
+      ]
+    }
+  ],
+  "selects": [
+    {
+      "displayName": "Motivo de abandono",
+      "queryName": "Databel - Data.Motivo de abandono",
+      "roles": {
+        "Values": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 1
+      },
+      "expr": {
+        "Column": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "Databel - Data"
+            }
+          },
+          "Property": "Motivo de abandono"
+        }
+      }
+    },
+    {
+      "displayName": "Bajas",
+      "queryName": "Databel - Data.Bajas",
+      "roles": {
+        "Values": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 259
+      },
+      "expr": {
+        "Measure": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "Databel - Data"
+            }
+          },
+          "Property": "Bajas"
+        }
+      },
+      "format": "#,0"
+    }
+  ]
+}

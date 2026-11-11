@@ -1,0 +1,3 @@
+expression FuenteCSV = "https://assets.datacamp.com/production/repositories/5993/datasets/d6a32ec1293e10bd44441b4f8b4fe60b9776e0d1/Databel%20-%20Data.csv" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 3fbf2ce5-6853-42d3-bd43-1897bdbfcd00
+

@@ -24,11 +24,11 @@ def table(rows):
 
 p('Databel: diagnóstico del abandono de clientes','Portada')
 p('Reporte del análisis y guía de Power Query y DAX')
-p('Hector Americo Torres Huamani | 10 de noviembre de 2026')
+p('Hector Americo Torres Huamani | 11 de noviembre de 2026')
 p('Adaptación de un caso educativo de DataCamp. Datos ficticios de telecomunicaciones; análisis descriptivo de una instantánea.')
 table([['Indicador','Resultado'],['Clientes',f"{stats['rows']:,}".replace(',', ' ')],['Bajas',f"{stats['churned']:,}".replace(',', ' ')],['Tasa de abandono',f"{stats['churn_rate']*100:.2f}".replace('.', ',')+' %'],['Bajas sin motivo',stats['churned_missing_reason']]])
 p('Estado de la entrega','Heading1')
-p('El proyecto nativo PBIP cargó correctamente en Power BI Desktop. Sus nueve medidas coinciden con Python en 13 contextos de filtro y 11 agregaciones de gráficos. Revisé las cuatro páginas mediante la herramienta oficial de Microsoft y comprobé cuatro selecciones guardadas de los segmentadores, incluida una combinación, y la recuperación del total. El PDF de presentación conserva las vistas reales del informe. No se ensayaron clics ni hover de tooltips.')
+p('El proyecto nativo PBIP cargó correctamente en Power BI Desktop. Sus nueve medidas coinciden con Python en 13 contextos de filtro y 14 agregaciones de gráficos. Revisé las cuatro páginas mediante la herramienta oficial de Microsoft y comprobé cuatro selecciones guardadas de los segmentadores, incluida una combinación, y la recuperación del total. El PDF de presentación conserva las vistas reales del informe. No se ensayaron clics ni hover de tooltips.')
 p('DataCamp mostraba los tres capítulos completados antes de esta adaptación. Esa evidencia no constituye una aprobación nueva del archivo de portafolio.')
 story.append(PageBreak())
 p('1. Contexto, datos y proceso','Heading1')

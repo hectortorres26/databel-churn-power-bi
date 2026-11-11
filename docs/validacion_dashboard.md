@@ -1,6 +1,6 @@
 # Validación del dashboard Databel
 
-Revisión final del 10 de noviembre de 2026 (hora de Lima). Separé las pruebas de datos, modelo y presentación para que el estado del proyecto sea verificable.
+Revisión final del 11 de noviembre de 2026 (hora de Lima), después del rediseño visual. Separé las pruebas de datos, modelo y presentación para que el estado del proyecto sea verificable.
 
 ## Datos y modelo propio
 
@@ -15,14 +15,14 @@ Ejecuté consultas DAX de solo lectura mediante ADOMD y comparé los resultados 
 | Bajas sin motivo | 27 |
 | IDs duplicados | 0 |
 | Nueve medidas en 13 contextos de filtro | Todas coinciden con Python |
-| Once combinaciones de dimensión y medida de los gráficos | Todas coinciden, categoría por categoría |
+| Catorce combinaciones de dimensión y medida de los gráficos | Todas coinciden, categoría por categoría |
 | Mismo modelo en fuente y sesión cargada | Correcto |
 
 Los filtros incluyen los tres contratos, dos grupos de edad, California, California con contrato mensual, actividad internacional cruzada con plan, clientes retenidos, una selección sin registros y el total restablecido. Se comprueba también la semántica `BLANK` de DAX, sin convertirla silenciosamente en cero.
 
 ## Presentación revisada
 
-- Cuatro páginas de 1280 × 850 con una jerarquía común de cabecera, indicadores, gráficos y notas.
+- Cuatro páginas de 1440 × 900 y 46 objetos, con una jerarquía común de cabecera, indicadores, gráficos y notas.
 - Resumen con 4 891 clientes retenidos y tres filtros identificados: estado, edad y contrato.
 - Títulos de gráficos ampliados y tooltips de tasas con clientes y bajas como denominador y numerador.
 - Eliminación del límite de 20 categorías: se conservan los 51 estados y territorios y los 21 motivos.
@@ -34,7 +34,9 @@ La plantilla revisada se compiló y se volvió a extraer con pbi-tools. La compr
 
 La automatización general de captura y accesibilidad no consiguió leer la ventana. Resolví el bloqueo mediante el [CLI oficial de autoría de Power BI](https://learn.microsoft.com/en-us/power-bi/developer/agentic/power-bi-report-skill-overview), versión 0.5.0. Convertí las definiciones propias a PBIP/PBIR y conservé el mismo modelo. El CLI se conectó a Desktop y obtuvo las vistas reales de sus cuatro páginas. No se sustituyeron por una recreación HTML ni por gráficos dibujados fuera de Power BI.
 
-La validación de esquemas terminó con **0 errores y 0 advertencias**. Revisé las cuatro vistas y corregí subtítulos automáticos, encabezados duplicados en los filtros, tamaño de títulos, etiquetas de datos y categorías del eje de llamadas. Los gráficos de estados y motivos conservan desplazamiento: la presentación estática muestra la porción inicial, mientras el proyecto nativo y los CSV permiten consultar el detalle completo.
+La validación de esquemas terminó con **0 errores y 0 advertencias**. Revisé las cuatro vistas y corregí títulos recortados, encabezados de filtros y columnas de valores que no aparecían en las tablas. Las tablas de estados y motivos conservan desplazamiento: la presentación estática muestra la porción inicial, mientras el proyecto nativo y los CSV permiten consultar el detalle completo.
+
+Al guardar, Desktop convirtió el modelo BIM a TMDL. Comprobé mediante el lector TOM que las nueve medidas, los tipos de columnas, Power Query y el parámetro de fuente coinciden con el modelo validado; el resultado está en `output/validacion_tmdl.json`. El guardado también retiró dos referencias de esquema y utilizó un esquema de contenedores aún no accesible al validador. Restauré las referencias públicas compatibles y repetí la validación y el renderizado sin cambiar los visuales ni sus datos.
 
 Para probar los controles sin automatizar el ratón, guardé selecciones en la propiedad nativa `general.filter` de los segmentadores, recargué el informe en Desktop y contrasté los resultados visibles con pandas y DAX. Son filtros aplicados por el informe real, no solo consultas aisladas.
 

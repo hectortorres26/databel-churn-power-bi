@@ -40,14 +40,18 @@ for name, filters in specs:
 visuals=[]
 for path in (R/'powerbi/Databel/Report/sections').glob('*/visualContainers/*/config.json'):
     sv=json.loads(path.read_text(encoding='utf-8'))['singleVisual']
-    if sv['visualType'] not in ('clusteredBarChart','clusteredColumnChart'): continue
+    if sv['visualType'] not in ('clusteredBarChart','clusteredColumnChart','tableEx'): continue
     fields=sv['prototypeQuery']['Select']
-    column=fields[0]['Column']['Property']; measure=fields[1]['Measure']['Property']
-    groups=[]
-    for category, data in df.groupby(column, dropna=False):
-        value=measures(data)[measure]
-        if value is not None: groups.append({'category':str(category), 'value':value})
-    visuals.append({'name':path.parent.name[2:], 'column':column, 'measure':measure, 'expected':groups})
+    column=fields[0]['Column']['Property']
+    measured_fields=fields[1:] if sv['visualType']=='tableEx' else fields[1:2]
+    for measured in measured_fields:
+        measure=measured['Measure']['Property']
+        groups=[]
+        for category, data in df.groupby(column, dropna=False):
+            value=measures(data)[measure]
+            if value is not None: groups.append({'category':str(category), 'value':value})
+        name=path.parent.name[2:]+(' / '+measure if sv['visualType']=='tableEx' else '')
+        visuals.append({'name':name, 'column':column, 'measure':measure, 'expected':groups})
 out={'filter_cases':tests, 'visual_cases':visuals}
 (R/'output/pruebas_motor_esperadas.json').write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 print(f'{len(tests)} casos de filtro; {len(visuals)} combinaciones de gráficos.')

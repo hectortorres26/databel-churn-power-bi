@@ -64,42 +64,7 @@ h.save(DEST/'Model/database.json',m)
 (ROOT/'docs/transformaciones.pq').write_text(query+'\n',encoding='utf-8')
 h.SCHEMA={table['name']:{c['name']:c['dataType'] for c in table['columns']}}
 T=table['name']
-def page(i,name,subtitle):
-    p=h.page(DEST,f'{i:03}_{name.replace(" ","_")}',name,i)
-    h.textbox(p,'Cabecera',['DATABEL | '+name,subtitle],24,20,1232,95,24,True)
-    return p
-def metric(p,i,name,fmt='#,0'):
-    h.visual(p,'KPI '+str(i),'card',[h.field('Values',T,name,True,fmt)],24+i*312,145,296,110,name)
-def chart(p,name,col,measure,x,y,w=608,height=260):
-    fmt='0.00%' if measure=='Tasa de abandono' else '#,0'
-    fields=[h.field('Category',T,col,False),h.field('Y',T,measure,True,fmt)]
-    if measure=='Tasa de abandono':
-        fields += [h.field('Tooltips',T,'Clientes'),h.field('Tooltips',T,'Bajas')]
-    h.visual(p,name,'clusteredBarChart',fields,x,y,w,height,name)
-p=page(0,'Resumen','Caso educativo de DataCamp · Instantánea de clientes · Sin dimensión temporal')
-for i,n in enumerate(['Clientes','Bajas','Tasa de abandono','Clientes retenidos']):metric(p,i,n,'0.00%' if i==2 else '#,0')
-chart(p,'Bajas por categoría','Categoria de abandono','Bajas',24,285)
-chart(p,'Abandono por contrato','Contract Type','Tasa de abandono',648,285)
-h.visual(p,'Filtro estado','slicer',[h.field('Values',T,'State',False)],24,575,400,90,'Estado')
-h.visual(p,'Filtro edad','slicer',[h.field('Values',T,'Grupo de edad',False)],440,575,400,90,'Grupo de edad')
-h.visual(p,'Filtro contrato','slicer',[h.field('Values',T,'Contract Type',False)],856,575,400,90,'Tipo de contrato')
-h.textbox(p,'Criterio',['Cómo leer el diagnóstico','Tasa = bajas / clientes del segmento. Al pasar por una barra de tasa, el tooltip muestra clientes y bajas.','Los filtros de esta página se combinan. Borra sus selecciones para recuperar los totales.','Datos ficticios de DataCamp; instantánea sin dimensión temporal. Las asociaciones no prueban causalidad.'],24,690,1232,135,18)
-p=page(1,'Segmentos','Comparación descriptiva · Evaluar tasas junto con el tamaño de cada segmento')
-chart(p,'Abandono por edad','Grupo de edad','Tasa de abandono',24,145)
-chart(p,'Clientes por edad','Grupo de edad','Clientes',648,145)
-chart(p,'Abandono por estado','State','Tasa de abandono',24,425,height=260)
-chart(p,'Abandono y grupos','Group','Tasa de abandono',648,425,height=260)
-h.textbox(p,'Nota',['Interpretación','Los estados se ordenan por tasa. El tooltip permite contrastar cada porcentaje con clientes y bajas.','El gráfico conserva los 51 estados y territorios. Los segmentos pequeños requieren cautela.'],24,710,1232,115,18)
-p=page(2,'Contratos y planes','Revisar la adecuación del plan y el tipo de contrato antes de proponer acciones')
-chart(p,'Tasa por método de pago','Payment Method','Tasa de abandono',24,145)
-chart(p,'Tasa por plan internacional','Intl Plan','Tasa de abandono',648,145)
-chart(p,'Tasa por datos ilimitados','Unlimited Data Plan','Tasa de abandono',24,425)
-chart(p,'Tasa por llamadas a servicio','Customer Service Calls','Tasa de abandono',648,425)
-h.visual(p,'Actividad internacional','slicer',[h.field('Values',T,'Intl Active',False)],24,705,480,90,'Actividad internacional')
-h.textbox(p,'Nota',['Cruzar actividad y plan','El filtro de actividad internacional compara usuarios que llaman al exterior y quienes no.','La tarifa mensual no representa ingresos perdidos ni ahorro potencial.'],530,705,726,120,18)
-p=page(3,'Motivos y calidad','Reconciliar el total antes de interpretar por qué se produce el abandono')
-metric(p,0,'Clientes');metric(p,1,'Bajas');metric(p,2,'Bajas sin motivo');metric(p,3,'IDs duplicados')
-chart(p,'Motivos declarados de las bajas','Motivo de abandono','Bajas',24,285,1232,380)
-h.textbox(p,'Nota',['Calidad y procedencia','Se conservan los 21 motivos, incluidos los 27 casos sin información. El detalle también está en el repositorio.','Las celdas vacías de clientes retenidos no son bajas. Se excluyó el teléfono y se ocultó el identificador de cliente.','Caso educativo de DataCamp. Consulta el README para fuentes, reproducción y estado de validación.'],24,690,1232,135,18)
+from diseno_visual import build
+build(DEST,T)
 cfg=h.read(DEST/'Report/config.json');cfg['activeSectionIndex']=0;h.save(DEST/'Report/config.json',cfg)
-print('Modelo con',len(table['measures']),'medidas y 4 páginas construido en',DEST)
+print('Modelo con',len(table['measures']),'medidas y diseño actualizado en',DEST)

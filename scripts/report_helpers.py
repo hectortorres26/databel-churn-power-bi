@@ -1,6 +1,12 @@
 from pathlib import Path
 import json,uuid,copy
 SCHEMA={}
+INK='#172F43'
+MUTED='#536778'
+VOLUME='#24778A'
+CHURN='#BC5138'
+RETAINED='#287966'
+PAPER='#F5F4F0'
 
 def read(p):return json.loads(p.read_text(encoding='utf-8-sig'))
 
@@ -14,32 +20,41 @@ def color(c):return {'solid':{'color':string(c)}}
 
 def uid(s):return uuid.uuid5(uuid.NAMESPACE_URL,s).hex[:20]
 
-def title(text):return [{'properties':{'show':lit('true'),'text':string(text),'fontColor':color('#18354A'),'fontSize':lit('14D'),'bold':lit('true'),'fontFamily':string('Segoe UI'),'alignment':string('left')}}]
+def title(text):return [{'properties':{'show':lit('true'),'text':string(text),'fontColor':color(INK),'fontSize':lit('15D'),'bold':lit('true'),'fontFamily':string('Segoe UI'),'alignment':string('left')}}]
 
-def visual(page,name,kind,fields,x,y,width,height,caption=None):
+def visual(page,name,kind,fields,x,y,width,height,caption=None,accent=None):
  """fields=(role,table,field,is_measure,format); generates matching query and bindings."""
  ident=uid(str(page)+name);pos={'x':x,'y':y,'width':width,'height':height,'z':1000}
  vc={'name':ident,'layouts':[{'id':0,'position':pos}], 'singleVisual':{'visualType':kind,'drillFilterOtherVisuals':True}}
- sv=vc['singleVisual'];sv['vcObjects']={'background':[{'properties':{'show':lit('true'),'color':color('#FFFFFF'),'transparency':lit('0D')}}],'title':title(caption or name),'border':[{'properties':{'show':lit('true'),'color':color('#DFE7EE'),'radius':lit('8D')}}]}
+ sv=vc['singleVisual'];sv['vcObjects']={'background':[{'properties':{'show':lit('true'),'color':color('#FFFFFF'),'transparency':lit('0D')}}],'title':title(caption or name),'border':[{'properties':{'show':lit('true'),'color':color('#E2E6E7'),'radius':lit('10D')}}]}
  sv['vcObjects']['subTitle']=[{'properties':{'show':lit('false')}}]
  if kind=='card':
   fmt=fields[0][4] or '#,0';precision=len(fmt.split('.',1)[1].replace('%','')) if '.' in fmt else 0
-  sv['objects']={'labels':[{'properties':{'fontSize':lit('29D'),'color':color('#087F8C'),'labelDisplayUnits':lit('1D'),'labelPrecision':lit(str(precision)+'L')}}],'categoryLabels':[{'properties':{'show':lit('false')}}]}
+  sv['objects']={'labels':[{'properties':{'fontSize':lit('38D'),'color':color(accent or INK),'labelDisplayUnits':lit('1D'),'labelPrecision':lit(str(precision)+'L')}}],'categoryLabels':[{'properties':{'show':lit('false')}}]}
  if kind=='slicer':
   sv['objects']={'data':[{'properties':{'mode':string('Dropdown')}}],'header':[{'properties':{'show':lit('false')}}],'items':[{'properties':{'textSize':lit('12D')}}]}
  if kind in ['clusteredBarChart','clusteredColumnChart','lineChart']:
-  sv['objects']={'dataPoint':[{'properties':{'defaultColor':color('#087F8C')}}],'categoryAxis':[{'properties':{'show':lit('true'),'fontSize':lit('10D'),'labelColor':color('#40576A')}}],'valueAxis':[{'properties':{'show':lit('true'),'fontSize':lit('10D')}}],'legend':[{'properties':{'show':lit('false')}}]}
+  sv['objects']={'dataPoint':[{'properties':{'defaultColor':color(accent or VOLUME)}}],'categoryAxis':[{'properties':{'show':lit('true'),'fontSize':lit('11D'),'labelColor':color(MUTED)}}],'valueAxis':[{'properties':{'show':lit('true'),'fontSize':lit('10D'),'labelColor':color(MUTED),'start':lit('0D')}}],'legend':[{'properties':{'show':lit('false')}}]}
   sv['objects']['subheader']=[{'properties':{'show':lit('false')}}]
   sv['objects']['categoryAxis'][0]['properties']['preferredCategoryWidth']=lit('20D')
   sv['objects']['categoryAxis'][0]['properties']['axisType']=string('Categorical')
   precision='2L' if fields[1][4]=='0.00%' else '0L'
   sv['objects']['labels']=[{'properties':{'show':lit('true'),'fontSize':lit('11D'),'labelDisplayUnits':lit('1D'),'labelPrecision':lit(precision),'labelPosition':string('OutsideEnd')}}]
+  if fields[1][4]=='0.00%':sv['objects']['valueAxis'][0]['properties']['end']=lit('1.1D')
+ if kind=='tableEx':
+  sv['vcObjects']['stylePreset']=[{'properties':{'name':string('None')}}]
+  sv['objects']={
+   'grid':[{'properties':{'gridVertical':lit('false'),'gridHorizontal':lit('false'),'rowPadding':lit('4D'),'textSize':lit('11D')}}],
+   'columnHeaders':[{'properties':{'fontFamily':string('Segoe UI'),'fontSize':lit('11D'),'bold':lit('true'),'fontColor':color(INK),'backColor':color('#EAF0F3'),'wordWrap':lit('false'),'autoSizeColumnWidth':lit('true'),'columnAdjustment':string('growToFit')}}],
+   'values':[{'properties':{'fontFamily':string('Segoe UI'),'fontSize':lit('11D'),'fontColorPrimary':color(INK),'fontColorSecondary':color(INK),'backColorPrimary':color('#FFFFFF'),'backColorSecondary':color('#F4F7F8'),'wordWrap':lit('false')}}],
+   'total':[{'properties':{'totals':lit('false')}}]
+  }
  refs=[];sels=[];sources=[];projections={};ordering={};selects=[];metas=[]
  for i,(role,t,f,measure,fmt) in enumerate(fields):
   alias='t'+str(next((j for j,a in enumerate(sources) if a['Entity']==t),len(sources)))
   if not any(a['Entity']==t for a in sources):sources.append({'Name':alias,'Entity':t,'Type':0})
   typ='Measure' if measure else 'Column';expr={typ:{'Expression':{'SourceRef':{'Source':alias}},'Property':f}};ref=t+'.'+f
-  sels.append({**expr,'Name':ref});refs.append(ref);projections.setdefault(role,[]).append({'queryRef':ref,**({} if measure else {'active':True})});ordering.setdefault(role,[]).append(i)
+  sels.append({**expr,'Name':ref});refs.append(ref);projections.setdefault(role,[]).append({'queryRef':ref,**({} if measure or kind=='tableEx' else {'active':True})});ordering.setdefault(role,[]).append(i)
   expr2=copy.deepcopy(expr);expr2[typ]['Expression']['SourceRef']={'Entity':t}
   dtype=SCHEMA.get(t,{}).get(f,'string');underlying=259 if measure else {'string':1,'int64':260,'double':259,'dateTime':7}.get(dtype,1)
   selects.append({'displayName':f,'queryName':ref,'roles':{role:True},'type':{'category':None,'underlyingType':underlying},'expr':expr2,**({'format':fmt} if fmt else {})})

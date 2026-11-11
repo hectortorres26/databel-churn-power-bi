@@ -1,12 +1,12 @@
 {
-  "name": "9f722a46f8f5565893d3",
+  "name": "604f81bee03d5fbeb799",
   "layouts": [
     {
       "id": 0,
       "position": {
-        "x": 24,
-        "y": 575,
-        "width": 400,
+        "x": 32,
+        "y": 152,
+        "width": 440,
         "height": 90,
         "z": 1000
       }
@@ -69,7 +69,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#18354A'"
+                      "Value": "'#172F43'"
                     }
                   }
                 }
@@ -78,7 +78,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "14D"
+                  "Value": "15D"
                 }
               }
             },
@@ -121,7 +121,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#DFE7EE'"
+                      "Value": "'#E2E6E7'"
                     }
                   }
                 }
@@ -130,7 +130,7 @@
             "radius": {
               "expr": {
                 "Literal": {
-                  "Value": "8D"
+                  "Value": "10D"
                 }
               }
             }

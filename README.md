@@ -12,6 +12,7 @@ Preparé una adaptación en Power BI con cuatro páginas y nueve medidas DAX, y 
 
 ## Explorar
 
+- [Descargar el dashboard completo (ZIP)](https://github.com/hectortorres26/databel-churn-power-bi/raw/refs/heads/main/entregables/Databel_dashboard_redisenado.zip): proyecto PBIP, plantilla PBIT, presentación, guía e instrucciones. Versión final del 11 de noviembre de 2026.
 - [Proyecto nativo de Power BI (PBIP)](powerbi/DatabelPresentacion/Databel.pbip): descargar el repositorio completo para conservar sus carpetas vinculadas.
 - [Presentación del dashboard en PDF](docs/Presentacion_dashboard_Databel.pdf): cuatro vistas reales del informe, listas para exponer.
 - [Plantilla de Power BI (alternativa PBIT)](entregables/Databel_abandono.pbit).
@@ -43,15 +44,19 @@ Los usuarios con actividad internacional y sin plan internacional presentan un 4
 ![Vista real de la página Resumen en Power BI Desktop](figures/dashboard_resumen.png)
 
 1. **Resumen:** clientes, bajas, tasa y clientes retenidos; comparación por contrato y filtros de estado, edad y contrato.
-2. **Segmentos:** tasas y volumen por edad, comparación geográfica y pertenencia a grupos.
-3. **Contratos y planes:** pagos, planes internacionales y de datos, atención al cliente y filtro de actividad internacional.
-4. **Motivos y calidad:** desglose de motivos y controles de integridad.
+2. **Segmentos:** tasas y volumen por edad, pertenencia a grupos y tabla por estado con clientes, bajas y tasa en la misma fila.
+3. **Contratos y planes:** pagos, planes internacionales y de datos, llamadas a soporte ordenadas de 0 a 5, indicadores de contexto y filtro de actividad internacional.
+4. **Motivos y calidad:** categorías en barras, detalle de motivos en tabla y controles de integridad.
 
-El reporte usa barras para comparar estados y conserva todas las categorías: 51 estados y territorios y 21 motivos. Las tasas incorporan clientes y bajas en los tooltips para dar contexto al porcentaje. Las tablas CSV permiten consultar el detalle completo fuera de Power BI.
+El reporte conserva todas las categorías: 51 estados y territorios y 21 motivos. La tabla geográfica permite contrastar directamente tasa y tamaño del segmento. Las tasas de los gráficos incorporan clientes y bajas en sus campos de tooltip. Las tablas CSV permiten consultar el detalle completo fuera de Power BI.
+
+El rediseño del 11 de noviembre distingue volumen en azul, abandono en naranja y retención en verde. Incluye una jerarquía tipográfica común, indicadores más visibles, filas alternadas en las tablas y escalas de porcentaje coherentes. Las decisiones y la comparación con la versión anterior están en [Rediseño visual](docs/redisenio_visual.md).
 
 ## Cómo abrir y actualizar
 
 Descarga o clona el repositorio y abre `powerbi/DatabelPresentacion/Databel.pbip` en una versión de Power BI Desktop compatible con PBIP/PBIR. Conserva las carpetas `Databel.Report` y `Databel.SemanticModel` junto al archivo. Pulsa **Actualizar** para cargar los datos. El caché local `.pbi/cache.abf` no se publica, por lo que una descarga nueva necesita actualizar el modelo antes de ver los indicadores.
+
+El ZIP de entrega permite descargar solo el dashboard y sus documentos: tras extraer **todo** su contenido, el archivo de entrada es `DatabelPresentacion/Databel.pbip`. Incluye un `LEEME.txt` con los pasos de carga. El modelo nativo se conserva en formato TMDL, verificado contra la definición original.
 
 Como alternativa, abre `entregables/Databel_abandono.pbit`. El parámetro `FuenteCSV` admite la URL propuesta del CSV público original o una ruta absoluta al archivo descargado. La plantilla no incluye datos cargados. Una conexión web pública puede requerir seleccionar acceso anónimo en Power BI. El PDF es una presentación estática; la interacción está en el informe nativo.
 
@@ -80,7 +85,7 @@ En la revisión añadí el filtro de contrato y los clientes retenidos, aumenté
 - Plantilla compilada correctamente; contiene cuatro páginas y nueve medidas.
 - Reapertura técnica del archivo PBIT con pbi-tools: recuperados correctamente el modelo, las cuatro páginas, las nueve medidas y el parámetro `FuenteCSV`. Se confirmó la exclusión de `Phone Number`.
 - Consultas DAX ejecutadas correctamente en el modelo inicial de DataCamp, mediante su laboratorio de Power BI en Edge: clientes, bajas, tasa, duplicados, motivos vacíos y los tres tipos de contrato coinciden con la auditoría. Consulta la [validación del motor](docs/validacion_edge.md).
-- **Modelo propio cargado en Power BI Desktop:** partición lista; nueve medidas y transformación Power Query coincidentes con la definición publicada. Las 13 pruebas de contextos de filtro y las 11 combinaciones de campos y medidas de los gráficos coinciden con el CSV. Incluyen filtros combinados, un contexto vacío y recuperación del total.
+- **Modelo propio cargado en Power BI Desktop:** partición lista; nueve medidas y transformación Power Query coincidentes con la definición publicada. Las 13 pruebas de contextos de filtro y las 14 combinaciones de campos y medidas de los gráficos coinciden con el CSV. Incluyen filtros combinados, un contexto vacío y recuperación del total.
 - **Plantilla revisada:** compilada y reextraída; modelo idéntico al comprobado, páginas y referencias revisadas técnicamente. Los resultados y el alcance están en [Validación del dashboard](docs/validacion_dashboard.md) y en [la evidencia de consultas](output/validacion_motor.json).
 - **Presentación nativa:** cuatro páginas revisadas en Power BI Desktop mediante el CLI oficial de Microsoft; validación PBIR con cero errores y cero advertencias. Las vistas reales están en el PDF de presentación.
 - **Segmentadores:** cuatro selecciones guardadas en PBIR, cargadas y renderizadas por Desktop: contrato mensual, mensual y California, 65 o más y actividad internacional. Los valores visibles coinciden con la auditoría. Al eliminar las selecciones se recuperan los totales. Esto comprueba la aplicación del filtro en el informe; no se ensayaron clics de ratón ni hover de tooltips. [Registro nativo](output/validacion_nativa.json).

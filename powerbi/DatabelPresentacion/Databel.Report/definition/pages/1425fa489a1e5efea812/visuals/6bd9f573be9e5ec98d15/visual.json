@@ -2,10 +2,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "6bd9f573be9e5ec98d15",
   "position": {
-    "x": 24,
+    "x": 32,
     "y": 20,
-    "width": 1232,
-    "height": 95,
+    "width": 1376,
+    "height": 112,
     "z": 0,
     "tabOrder": 0
   },
@@ -19,11 +19,24 @@
               {
                 "textRuns": [
                   {
-                    "value": "DATABEL | Motivos y calidad",
+                    "value": "DATABEL   /   04   MOTIVOS Y CALIDAD",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "24pt",
+                      "fontSize": "11pt",
                       "fontWeight": "bold",
+                      "color": "#89D4CA"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Motivos declarados y calidad del dato",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "28pt",
+                      "fontWeight": "normal",
                       "color": "#FFFFFF"
                     }
                   }
@@ -32,12 +45,12 @@
               {
                 "textRuns": [
                   {
-                    "value": "Reconciliar el total antes de interpretar por qué se produce el abandono",
+                    "value": "Mantener los casos sin información permite reconciliar el diagnóstico con el total de bajas.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "14pt",
+                      "fontSize": "12pt",
                       "fontWeight": "normal",
-                      "color": "#FFFFFF"
+                      "color": "#CFDDE5"
                     }
                   }
                 ]
@@ -63,7 +76,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#15354A'"
+                      "Value": "'#172F43'"
                     }
                   }
                 }

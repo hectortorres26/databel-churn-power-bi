@@ -2,7 +2,7 @@
 
 ## Proyecto nativo recomendado
 
-`powerbi/DatabelPresentacion/Databel.pbip` abre el informe PBIR y el modelo `model.bim` asociados. Descarga el repositorio completo y actualiza la fuente en Desktop. El archivo PBIP por sí solo no contiene el informe.
+`powerbi/DatabelPresentacion/Databel.pbip` abre el informe PBIR y el modelo TMDL de `Databel.SemanticModel/definition` asociados. Desktop convirtió el BIM a TMDL al guardar; sus medidas, tipos, Power Query y fuente se contrastaron con el modelo original. Descarga el repositorio completo y actualiza la fuente en Desktop. El archivo PBIP por sí solo no contiene el informe. El generador visual conserva el modelo TMDL si ya existe.
 
 El caché `.pbi/cache.abf` permite abrir localmente los datos ya cargados, pero está excluido de Git junto con los archivos ABF. Una descarga del repositorio requiere **Actualizar**. No hay credenciales ni filas individuales publicadas. Esta separación sigue la [estructura de proyectos de Microsoft](https://learn.microsoft.com/en-us/power-bi/developer/projects/projects-dataset).
 

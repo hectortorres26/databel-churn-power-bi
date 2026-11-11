@@ -1,8 +1,8 @@
 {
   "name": "2fc9d8c838955dbfb5ed",
   "displayName": "Segmentos",
-  "height": 850,
-  "width": 1280,
+  "height": 900,
+  "width": 1440,
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
   "displayOption": "FitToPage",
   "objects": {
@@ -14,7 +14,7 @@
               "color": {
                 "expr": {
                   "Literal": {
-                    "Value": "'#F3F6FA'"
+                    "Value": "'#F5F4F0'"
                   }
                 }
               }
@@ -34,17 +34,62 @@
   "visualInteractions": [
     {
       "source": "0547ca3cb9ba5440a9d8",
+      "target": "861c71e319255d9da3ee",
+      "type": "DataFilter"
+    },
+    {
+      "source": "0547ca3cb9ba5440a9d8",
+      "target": "02e098d316ff57348d51",
+      "type": "DataFilter"
+    },
+    {
+      "source": "0547ca3cb9ba5440a9d8",
+      "target": "e516671f131d562c88a4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "0547ca3cb9ba5440a9d8",
+      "target": "e50bf824127a58b8a486",
+      "type": "DataFilter"
+    },
+    {
+      "source": "0547ca3cb9ba5440a9d8",
       "target": "4ab8845d5967558785ae",
       "type": "DataFilter"
     },
     {
       "source": "0547ca3cb9ba5440a9d8",
-      "target": "e8f4d754ea7f5a13b7e2",
+      "target": "561f44536d565771b011",
       "type": "DataFilter"
     },
     {
       "source": "0547ca3cb9ba5440a9d8",
-      "target": "8e551b169d1d5598bbb3",
+      "target": "147706ceb8ed552d80af",
+      "type": "DataFilter"
+    },
+    {
+      "source": "0547ca3cb9ba5440a9d8",
+      "target": "6ab23f7cb4045dd1bc62",
+      "type": "DataFilter"
+    },
+    {
+      "source": "4ab8845d5967558785ae",
+      "target": "861c71e319255d9da3ee",
+      "type": "DataFilter"
+    },
+    {
+      "source": "4ab8845d5967558785ae",
+      "target": "02e098d316ff57348d51",
+      "type": "DataFilter"
+    },
+    {
+      "source": "4ab8845d5967558785ae",
+      "target": "e516671f131d562c88a4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "4ab8845d5967558785ae",
+      "target": "e50bf824127a58b8a486",
       "type": "DataFilter"
     },
     {
@@ -54,42 +99,137 @@
     },
     {
       "source": "4ab8845d5967558785ae",
-      "target": "e8f4d754ea7f5a13b7e2",
+      "target": "561f44536d565771b011",
       "type": "DataFilter"
     },
     {
       "source": "4ab8845d5967558785ae",
-      "target": "8e551b169d1d5598bbb3",
+      "target": "147706ceb8ed552d80af",
       "type": "DataFilter"
     },
     {
-      "source": "e8f4d754ea7f5a13b7e2",
+      "source": "4ab8845d5967558785ae",
+      "target": "6ab23f7cb4045dd1bc62",
+      "type": "DataFilter"
+    },
+    {
+      "source": "561f44536d565771b011",
+      "target": "861c71e319255d9da3ee",
+      "type": "DataFilter"
+    },
+    {
+      "source": "561f44536d565771b011",
+      "target": "02e098d316ff57348d51",
+      "type": "DataFilter"
+    },
+    {
+      "source": "561f44536d565771b011",
+      "target": "e516671f131d562c88a4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "561f44536d565771b011",
+      "target": "e50bf824127a58b8a486",
+      "type": "DataFilter"
+    },
+    {
+      "source": "561f44536d565771b011",
       "target": "0547ca3cb9ba5440a9d8",
       "type": "DataFilter"
     },
     {
-      "source": "e8f4d754ea7f5a13b7e2",
+      "source": "561f44536d565771b011",
       "target": "4ab8845d5967558785ae",
       "type": "DataFilter"
     },
     {
-      "source": "e8f4d754ea7f5a13b7e2",
-      "target": "8e551b169d1d5598bbb3",
+      "source": "561f44536d565771b011",
+      "target": "147706ceb8ed552d80af",
       "type": "DataFilter"
     },
     {
-      "source": "8e551b169d1d5598bbb3",
+      "source": "561f44536d565771b011",
+      "target": "6ab23f7cb4045dd1bc62",
+      "type": "DataFilter"
+    },
+    {
+      "source": "147706ceb8ed552d80af",
+      "target": "861c71e319255d9da3ee",
+      "type": "DataFilter"
+    },
+    {
+      "source": "147706ceb8ed552d80af",
+      "target": "02e098d316ff57348d51",
+      "type": "DataFilter"
+    },
+    {
+      "source": "147706ceb8ed552d80af",
+      "target": "e516671f131d562c88a4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "147706ceb8ed552d80af",
+      "target": "e50bf824127a58b8a486",
+      "type": "DataFilter"
+    },
+    {
+      "source": "147706ceb8ed552d80af",
       "target": "0547ca3cb9ba5440a9d8",
       "type": "DataFilter"
     },
     {
-      "source": "8e551b169d1d5598bbb3",
+      "source": "147706ceb8ed552d80af",
       "target": "4ab8845d5967558785ae",
       "type": "DataFilter"
     },
     {
-      "source": "8e551b169d1d5598bbb3",
-      "target": "e8f4d754ea7f5a13b7e2",
+      "source": "147706ceb8ed552d80af",
+      "target": "561f44536d565771b011",
+      "type": "DataFilter"
+    },
+    {
+      "source": "147706ceb8ed552d80af",
+      "target": "6ab23f7cb4045dd1bc62",
+      "type": "DataFilter"
+    },
+    {
+      "source": "6ab23f7cb4045dd1bc62",
+      "target": "861c71e319255d9da3ee",
+      "type": "DataFilter"
+    },
+    {
+      "source": "6ab23f7cb4045dd1bc62",
+      "target": "02e098d316ff57348d51",
+      "type": "DataFilter"
+    },
+    {
+      "source": "6ab23f7cb4045dd1bc62",
+      "target": "e516671f131d562c88a4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "6ab23f7cb4045dd1bc62",
+      "target": "e50bf824127a58b8a486",
+      "type": "DataFilter"
+    },
+    {
+      "source": "6ab23f7cb4045dd1bc62",
+      "target": "0547ca3cb9ba5440a9d8",
+      "type": "DataFilter"
+    },
+    {
+      "source": "6ab23f7cb4045dd1bc62",
+      "target": "4ab8845d5967558785ae",
+      "type": "DataFilter"
+    },
+    {
+      "source": "6ab23f7cb4045dd1bc62",
+      "target": "561f44536d565771b011",
+      "type": "DataFilter"
+    },
+    {
+      "source": "6ab23f7cb4045dd1bc62",
+      "target": "147706ceb8ed552d80af",
       "type": "DataFilter"
     }
   ]
