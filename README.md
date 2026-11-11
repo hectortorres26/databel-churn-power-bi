@@ -1,5 +1,7 @@
 # Databel: diagnóstico del abandono de clientes
 
+![Databel: 6 687 clientes, 1 796 bajas y 26,86 % de abandono](figures/miniatura_databel.png)
+
 **Hector Americo Torres Huamani · Power BI, Power Query y DAX**
 
 Analicé una instantánea de **6 687 clientes** de Databel, una empresa ficticia de telecomunicaciones, para identificar cómo se distribuye el abandono entre contratos, perfiles y planes. Encontré **1 796 bajas**, equivalentes al **26,86 %** de los clientes.
@@ -68,6 +70,7 @@ También distinguí la antigüedad de la cuenta de una fecha de observación. El
 - Auditoría con pandas y recuento independiente con la biblioteca estándar: correctos.
 - Los totales de los segmentos y motivos se reconcilian con 6 687 clientes y 1 796 bajas.
 - Plantilla compilada correctamente; contiene cuatro páginas y nueve medidas.
+- Reapertura técnica del archivo PBIT con pbi-tools: recuperados correctamente el modelo, las cuatro páginas, las nueve medidas y el parámetro `FuenteCSV`. Se confirmó la exclusión de `Phone Number`.
 - Consultas DAX ejecutadas correctamente en el modelo inicial de DataCamp, mediante su laboratorio de Power BI en Edge: clientes, bajas, tasa, duplicados, motivos vacíos y los tres tipos de contrato coinciden con la auditoría. Consulta la [validación del motor](docs/validacion_edge.md).
 - **Pendiente:** cargar la plantilla propia de cuatro páginas y verificar sus transformaciones, visuales e interacciones. El laboratorio utiliza archivos de una máquina remota y no se observó un control para cargar la plantilla local. Validar consultas sobre el modelo inicial no equivale a validar ese archivo PBIT.
 - DataCamp mostraba los tres capítulos al 100 % **antes** de esta adaptación. No presento ese progreso previo como aprobación de este nuevo archivo por el corrector.
