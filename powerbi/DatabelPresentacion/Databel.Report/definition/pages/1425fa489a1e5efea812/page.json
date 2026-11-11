@@ -1,0 +1,56 @@
+{
+  "name": "1425fa489a1e5efea812",
+  "displayName": "Motivos y calidad",
+  "height": 850,
+  "width": 1280,
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "displayOption": "FitToPage",
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F3F6FA'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "ef50145a2a005a358791",
+      "target": "0489ba76c41c5c06a507",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ef50145a2a005a358791",
+      "target": "6f152774632d5740a4dc",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ef50145a2a005a358791",
+      "target": "7c629ebadd8f57abbc5c",
+      "type": "DataFilter"
+    },
+    {
+      "source": "ef50145a2a005a358791",
+      "target": "ef8015c3c8df5dfebced",
+      "type": "DataFilter"
+    }
+  ]
+}

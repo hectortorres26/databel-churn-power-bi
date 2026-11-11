@@ -8,3 +8,5 @@ __pycache__/
 *.tmp
 estado_local.json
 test_skill_local.txt
+**/.pbi/
+*.abf

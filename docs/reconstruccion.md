@@ -1,4 +1,22 @@
-# Reconstruir la plantilla
+# Reconstruir el proyecto y la plantilla
+
+## Proyecto nativo recomendado
+
+`powerbi/DatabelPresentacion/Databel.pbip` abre el informe PBIR y el modelo `model.bim` asociados. Descarga el repositorio completo y actualiza la fuente en Desktop. El archivo PBIP por sí solo no contiene el informe.
+
+El caché `.pbi/cache.abf` permite abrir localmente los datos ya cargados, pero está excluido de Git junto con los archivos ABF. Una descarga del repositorio requiere **Actualizar**. No hay credenciales ni filas individuales publicadas. Esta separación sigue la [estructura de proyectos de Microsoft](https://learn.microsoft.com/en-us/power-bi/developer/projects/projects-dataset).
+
+Para regenerar el informe después de modificar `powerbi/Databel`, instala el CLI oficial y ejecuta `python scripts/crear_pbip.py`. El repositorio ya incluye su esqueleto y tema. Solo si partes de una carpeta nueva, crea primero el esqueleto:
+
+```powershell
+npm install --prefix trabajo/herramientas @microsoft/powerbi-report-authoring-cli@0.5.0
+node trabajo/herramientas/node_modules/@microsoft/powerbi-report-authoring-cli/dist/cli.js scaffold powerbi/DatabelPresentacion --name Databel --model-path ../Databel.SemanticModel --page-name Resumen --offline
+python scripts/crear_pbip.py
+```
+
+El generador reemplaza las páginas propias: conserva una copia si las personalizaste. `scripts/cache_modelo_local.ps1` es una utilidad opcional para guardar un caché privado desde un modelo ya cargado y validado; no se necesita para abrir y actualizar un proyecto descargado. Se validó con Desktop 2.159.1231.0 y CLI 0.5.0. Consulta el procedimiento de filtros y vistas en [Validación](validacion_dashboard.md).
+
+## Alternativa PBIT
 
 Para abrir el informe utiliza la plantilla de `entregables`. No hace falta reconstruirla. Para compilar las definiciones incluidas se necesita una combinación compatible de Power BI Desktop y pbi-tools:
 

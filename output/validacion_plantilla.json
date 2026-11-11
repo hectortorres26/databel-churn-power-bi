@@ -1,6 +1,6 @@
 {
   "status": "OK",
-  "pbit_sha256": "6b0dc68e0ae50a30c741f783df6537cfb77ccd3fe6816789eccdd4e8bc981967",
+  "pbit_sha256": "61e18f665217aea9040f67a4cf977e98c9e6895210184e39f69ff1b40a3ee560",
   "model_definition_sha256": "9f2972aa2f33500e748167fa4cdfeb1b9e022268c69c7ac3965ccbda400ba5d1",
   "hash_normalization": "UTF-8 sin BOM, saltos LF",
   "model_and_report_match_reextraction": true,

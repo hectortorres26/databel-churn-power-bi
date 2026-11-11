@@ -1,0 +1,533 @@
+{
+  "name": "Databel_portafolio",
+  "compatibilityLevel": 1550,
+  "model": {
+    "culture": "en-US",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "Databel - Data",
+        "lineageTag": "f5d08f5f-30e7-429a-bd29-020c68ff2079",
+        "columns": [
+          {
+            "name": "Customer ID",
+            "dataType": "string",
+            "sourceColumn": "Customer ID",
+            "lineageTag": "1f33d818-44db-42a9-84b9-a8f20d7f32e2",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "isHidden": true
+          },
+          {
+            "name": "Churn Label",
+            "dataType": "string",
+            "sourceColumn": "Churn Label",
+            "lineageTag": "00438ea6-1c65-4f6a-972e-8cd51db1987c",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Account Length (in months)",
+            "dataType": "int64",
+            "sourceColumn": "Account Length (in months)",
+            "formatString": "0",
+            "lineageTag": "7c88e68d-c8e1-478c-a2fb-4f4dd0b395e8",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Local Calls",
+            "dataType": "int64",
+            "sourceColumn": "Local Calls",
+            "formatString": "0",
+            "lineageTag": "f85bbd9d-ebfe-451c-ae02-42ce1d23eec2",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Local Mins",
+            "dataType": "double",
+            "sourceColumn": "Local Mins",
+            "lineageTag": "7e70ef46-e25b-4a8d-8a0f-ff944d2b2f37",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "Intl Calls",
+            "dataType": "int64",
+            "sourceColumn": "Intl Calls",
+            "formatString": "0",
+            "lineageTag": "157b1fe2-58c6-4658-9f0f-22aac315e456",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Intl Mins",
+            "dataType": "double",
+            "sourceColumn": "Intl Mins",
+            "lineageTag": "ee5e9f0e-5671-4eeb-9779-ae36d16e3323",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "Intl Active",
+            "dataType": "string",
+            "sourceColumn": "Intl Active",
+            "lineageTag": "d0d38f77-1b8f-4ad3-aaf4-567ee11c25b8",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Intl Plan",
+            "dataType": "string",
+            "sourceColumn": "Intl Plan",
+            "lineageTag": "4ec91560-9eb9-4faa-bb9a-2cc5d3c35c3b",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Extra International Charges",
+            "dataType": "int64",
+            "sourceColumn": "Extra International Charges",
+            "formatString": "0",
+            "lineageTag": "3e10183b-1405-4915-8a7b-a350f9fb7ff4",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Customer Service Calls",
+            "dataType": "int64",
+            "sourceColumn": "Customer Service Calls",
+            "formatString": "0",
+            "lineageTag": "aa1845c4-0729-4613-9ebf-e640e43ceb55",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Avg Monthly GB Download",
+            "dataType": "int64",
+            "sourceColumn": "Avg Monthly GB Download",
+            "formatString": "0",
+            "lineageTag": "ffb77da1-155f-45f2-9771-fb52de25af6d",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Unlimited Data Plan",
+            "dataType": "string",
+            "sourceColumn": "Unlimited Data Plan",
+            "lineageTag": "bb3dd428-5f6c-41d0-8d55-b0c1c9b902b8",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Extra Data Charges",
+            "dataType": "int64",
+            "sourceColumn": "Extra Data Charges",
+            "formatString": "0",
+            "lineageTag": "e263b4d7-6fdf-429d-a574-5061b9a14b6a",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "State",
+            "dataType": "string",
+            "sourceColumn": "State",
+            "lineageTag": "084ef702-f9d2-4aff-a120-b578446b1ddc",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataCategory": "StateOrProvince"
+          },
+          {
+            "name": "Gender",
+            "dataType": "string",
+            "sourceColumn": "Gender",
+            "lineageTag": "717237cc-ac0b-4e5c-8904-bce3a0a9dd9a",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Age",
+            "dataType": "int64",
+            "sourceColumn": "Age",
+            "formatString": "0",
+            "lineageTag": "32d634c1-ba79-4304-b726-01a6358ab29d",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Under 30",
+            "dataType": "string",
+            "sourceColumn": "Under 30",
+            "lineageTag": "652ef4e7-853d-4f76-a499-01e89b456178",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Senior",
+            "dataType": "string",
+            "sourceColumn": "Senior",
+            "lineageTag": "36a77841-84e2-44df-9812-e79003f39683",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Group",
+            "dataType": "string",
+            "sourceColumn": "Group",
+            "lineageTag": "1a0c110c-807b-4d5f-ab6e-be0024777724",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Number of Customers in Group",
+            "dataType": "int64",
+            "sourceColumn": "Number of Customers in Group",
+            "formatString": "0",
+            "lineageTag": "8f940ec6-c45b-47e0-8d4f-8a7e7d9f8e7c",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Device Protection & Online Backup",
+            "dataType": "string",
+            "sourceColumn": "Device Protection & Online Backup",
+            "lineageTag": "56e8e7a2-20a4-4996-a9be-90050df5cbb0",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Contract Type",
+            "dataType": "string",
+            "sourceColumn": "Contract Type",
+            "lineageTag": "d939c6b6-42bc-484f-9625-092943247f3a",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Payment Method",
+            "dataType": "string",
+            "sourceColumn": "Payment Method",
+            "lineageTag": "50a8871e-5366-40ac-85e5-d1a85a897399",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Monthly Charge",
+            "dataType": "int64",
+            "sourceColumn": "Monthly Charge",
+            "formatString": "0",
+            "lineageTag": "82c5988b-10af-487e-bc0d-61383a843c50",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Total Charges",
+            "dataType": "int64",
+            "sourceColumn": "Total Charges",
+            "formatString": "0",
+            "lineageTag": "1f42b0ac-6110-49da-ae91-6031a4fc1506",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Churn Category",
+            "dataType": "string",
+            "sourceColumn": "Churn Category",
+            "lineageTag": "a97777f4-d6c7-444e-a60b-0b696ac6943c",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Churn Reason",
+            "dataType": "string",
+            "sourceColumn": "Churn Reason",
+            "lineageTag": "12fb86fc-4528-4b4d-a480-5bae25b9c7d9",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Grupo de edad",
+            "dataType": "string",
+            "sourceColumn": "Grupo de edad",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Categoria de abandono",
+            "dataType": "string",
+            "sourceColumn": "Categoria de abandono",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Motivo de abandono",
+            "dataType": "string",
+            "sourceColumn": "Motivo de abandono",
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Databel - Data-b37c2b98-7492-4a48-8b7a-5332ca70065a",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Archivo = if Text.StartsWith(FuenteCSV, \"https://\") then Web.Contents(FuenteCSV) else File.Contents(FuenteCSV),",
+                "    CSV = Csv.Document(Archivo,[Delimiter=\",\", Columns=29, Encoding=1252, QuoteStyle=QuoteStyle.Csv]),",
+                "    Cabeceras = Table.PromoteHeaders(CSV, [PromoteAllScalars=true]),",
+                "    SinTelefono = Table.RemoveColumns(Cabeceras, {\"Phone Number\"}),",
+                "    Tipos = Table.TransformColumnTypes(SinTelefono, {{\"Customer ID\", type text}, {\"Churn Label\", type text}, {\"Account Length (in months)\", Int64.Type}, {\"Local Calls\", Int64.Type}, {\"Local Mins\", type number}, {\"Intl Calls\", Int64.Type}, {\"Intl Mins\", type number}, {\"Intl Active\", type text}, {\"Intl Plan\", type text}, {\"Extra International Charges\", Int64.Type}, {\"Customer Service Calls\", Int64.Type}, {\"Avg Monthly GB Download\", Int64.Type}, {\"Unlimited Data Plan\", type text}, {\"Extra Data Charges\", Int64.Type}, {\"State\", type text}, {\"Gender\", type text}, {\"Age\", Int64.Type}, {\"Under 30\", type text}, {\"Senior\", type text}, {\"Group\", type text}, {\"Number of Customers in Group\", Int64.Type}, {\"Device Protection & Online Backup\", type text}, {\"Contract Type\", type text}, {\"Payment Method\", type text}, {\"Monthly Charge\", Int64.Type}, {\"Total Charges\", Int64.Type}, {\"Churn Category\", type text}, {\"Churn Reason\", type text}}, \"en-US\"),",
+                "    Edades = Table.AddColumn(Tipos, \"Grupo de edad\", each if [Age] < 30 then \"Menores de 30\" else if [Age] >= 65 then \"65 o más\" else \"30 a 64\", type text),",
+                "    Categorias = Table.AddColumn(Edades, \"Categoria de abandono\", each if [Churn Label] <> \"Yes\" then \"No aplica\" else if [Churn Category] = null or Text.Trim([Churn Category]) = \"\" then \"Sin motivo informado\" else [Churn Category], type text),",
+                "    Motivos = Table.AddColumn(Categorias, \"Motivo de abandono\", each if [Churn Label] <> \"Yes\" then \"No aplica\" else if [Churn Reason] = null or Text.Trim([Churn Reason]) = \"\" then \"Sin motivo informado\" else [Churn Reason], type text)",
+                "in",
+                "    Motivos"
+              ]
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Clientes",
+            "expression": "DISTINCTCOUNT('Databel - Data'[Customer ID])",
+            "formatString": "#,0",
+            "displayFolder": "Indicadores"
+          },
+          {
+            "name": "Bajas",
+            "expression": "CALCULATE([Clientes], KEEPFILTERS('Databel - Data'[Churn Label] = \"Yes\"))",
+            "formatString": "#,0",
+            "displayFolder": "Indicadores"
+          },
+          {
+            "name": "Tasa de abandono",
+            "expression": "DIVIDE([Bajas], [Clientes])",
+            "formatString": "0.00%",
+            "displayFolder": "Indicadores"
+          },
+          {
+            "name": "Clientes retenidos",
+            "expression": "CALCULATE([Clientes], KEEPFILTERS('Databel - Data'[Churn Label] = \"No\"))",
+            "formatString": "#,0",
+            "displayFolder": "Indicadores"
+          },
+          {
+            "name": "Bajas sin motivo",
+            "expression": "CALCULATE([Bajas], KEEPFILTERS('Databel - Data'[Motivo de abandono] = \"Sin motivo informado\"))",
+            "formatString": "#,0",
+            "displayFolder": "Indicadores"
+          },
+          {
+            "name": "Cargo mensual medio",
+            "expression": "AVERAGE('Databel - Data'[Monthly Charge])",
+            "formatString": "#,0.00",
+            "displayFolder": "Indicadores"
+          },
+          {
+            "name": "Llamadas de servicio medias",
+            "expression": "AVERAGE('Databel - Data'[Customer Service Calls])",
+            "formatString": "0.00",
+            "displayFolder": "Indicadores"
+          },
+          {
+            "name": "Filas",
+            "expression": "COUNTROWS('Databel - Data')",
+            "formatString": "#,0",
+            "displayFolder": "Indicadores"
+          },
+          {
+            "name": "IDs duplicados",
+            "expression": "[Filas] - [Clientes]",
+            "formatString": "#,0",
+            "displayFolder": "Indicadores"
+          }
+        ],
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          },
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          }
+        ]
+      }
+    ],
+    "annotations": [
+      {
+        "name": "PBIDesktopVersion",
+        "value": "2.109.782.0 (22.09)"
+      },
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"Databel - Data\"]"
+      },
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "1"
+      }
+    ],
+    "expressions": [
+      {
+        "name": "FuenteCSV",
+        "kind": "m",
+        "expression": "\"https://assets.datacamp.com/production/repositories/5993/datasets/d6a32ec1293e10bd44441b4f8b4fe60b9776e0d1/Databel%20-%20Data.csv\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]"
+      }
+    ]
+  }
+}

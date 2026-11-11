@@ -242,81 +242,81 @@
   ],
   "visual_cases": [
     {
-      "categories": 3,
-      "measure": "Tasa de abandono",
       "status": "OK",
+      "categories": 3,
       "column": "Contract Type",
-      "name": "Abandono por contrato"
+      "name": "Abandono por contrato",
+      "measure": "Tasa de abandono"
     },
     {
-      "categories": 6,
-      "measure": "Bajas",
       "status": "OK",
+      "categories": 6,
       "column": "Categoria de abandono",
-      "name": "Bajas por categoría"
+      "name": "Bajas por categoría",
+      "measure": "Bajas"
     },
     {
-      "categories": 3,
-      "measure": "Tasa de abandono",
       "status": "OK",
+      "categories": 3,
       "column": "Grupo de edad",
-      "name": "Abandono por edad"
+      "name": "Abandono por edad",
+      "measure": "Tasa de abandono"
     },
     {
+      "status": "OK",
       "categories": 51,
-      "measure": "Tasa de abandono",
-      "status": "OK",
       "column": "State",
-      "name": "Abandono por estado"
+      "name": "Abandono por estado",
+      "measure": "Tasa de abandono"
     },
     {
-      "categories": 2,
-      "measure": "Tasa de abandono",
       "status": "OK",
+      "categories": 2,
       "column": "Group",
-      "name": "Abandono y grupos"
+      "name": "Abandono y grupos",
+      "measure": "Tasa de abandono"
     },
     {
-      "categories": 3,
-      "measure": "Clientes",
       "status": "OK",
+      "categories": 3,
       "column": "Grupo de edad",
-      "name": "Clientes por edad"
+      "name": "Clientes por edad",
+      "measure": "Clientes"
     },
     {
-      "categories": 2,
-      "measure": "Tasa de abandono",
       "status": "OK",
+      "categories": 2,
       "column": "Unlimited Data Plan",
-      "name": "Tasa por datos ilimitados"
+      "name": "Tasa por datos ilimitados",
+      "measure": "Tasa de abandono"
     },
     {
+      "status": "OK",
       "categories": 6,
-      "measure": "Tasa de abandono",
-      "status": "OK",
       "column": "Customer Service Calls",
-      "name": "Tasa por llamadas a servicio"
+      "name": "Tasa por llamadas a servicio",
+      "measure": "Tasa de abandono"
     },
     {
+      "status": "OK",
       "categories": 3,
-      "measure": "Tasa de abandono",
-      "status": "OK",
       "column": "Payment Method",
-      "name": "Tasa por método de pago"
+      "name": "Tasa por método de pago",
+      "measure": "Tasa de abandono"
     },
     {
+      "status": "OK",
       "categories": 2,
-      "measure": "Tasa de abandono",
-      "status": "OK",
       "column": "Intl Plan",
-      "name": "Tasa por plan internacional"
+      "name": "Tasa por plan internacional",
+      "measure": "Tasa de abandono"
     },
     {
-      "categories": 21,
-      "measure": "Bajas",
       "status": "OK",
+      "categories": 21,
       "column": "Motivo de abandono",
-      "name": "Motivos declarados de las bajas"
+      "name": "Motivos declarados de las bajas",
+      "measure": "Bajas"
     }
   ],
   "failures": [],

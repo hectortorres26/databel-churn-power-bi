@@ -12,7 +12,9 @@ Preparé una adaptación en Power BI con cuatro páginas y nueve medidas DAX, y 
 
 ## Explorar
 
-- [Plantilla de Power BI](entregables/Databel_abandono.pbit).
+- [Proyecto nativo de Power BI (PBIP)](powerbi/DatabelPresentacion/Databel.pbip): descargar el repositorio completo para conservar sus carpetas vinculadas.
+- [Presentación del dashboard en PDF](docs/Presentacion_dashboard_Databel.pdf): cuatro vistas reales del informe, listas para exponer.
+- [Plantilla de Power BI (alternativa PBIT)](entregables/Databel_abandono.pbit).
 - [Notebook de validación independiente](Validacion_Databel.ipynb).
 - [Reporte y guía de medidas](docs/Reporte_y_guia_Databel.pdf).
 - [Medidas DAX](docs/medidas.dax) y [Power Query](docs/transformaciones.pq).
@@ -38,6 +40,8 @@ Los usuarios con actividad internacional y sin plan internacional presentan un 4
 
 ## Páginas del informe
 
+![Vista real de la página Resumen en Power BI Desktop](figures/dashboard_resumen.png)
+
 1. **Resumen:** clientes, bajas, tasa y clientes retenidos; comparación por contrato y filtros de estado, edad y contrato.
 2. **Segmentos:** tasas y volumen por edad, comparación geográfica y pertenencia a grupos.
 3. **Contratos y planes:** pagos, planes internacionales y de datos, atención al cliente y filtro de actividad internacional.
@@ -47,7 +51,9 @@ El reporte usa barras para comparar estados y conserva todas las categorías: 51
 
 ## Cómo abrir y actualizar
 
-Abre `entregables/Databel_abandono.pbit` en Power BI Desktop. El parámetro `FuenteCSV` admite la URL propuesta del CSV público original o una ruta absoluta al archivo descargado. La plantilla no incluye datos cargados. Una conexión web pública puede requerir seleccionar acceso anónimo en Power BI.
+Descarga o clona el repositorio y abre `powerbi/DatabelPresentacion/Databel.pbip` en una versión de Power BI Desktop compatible con PBIP/PBIR. Conserva las carpetas `Databel.Report` y `Databel.SemanticModel` junto al archivo. Pulsa **Actualizar** para cargar los datos. El caché local `.pbi/cache.abf` no se publica, por lo que una descarga nueva necesita actualizar el modelo antes de ver los indicadores.
+
+Como alternativa, abre `entregables/Databel_abandono.pbit`. El parámetro `FuenteCSV` admite la URL propuesta del CSV público original o una ruta absoluta al archivo descargado. La plantilla no incluye datos cargados. Una conexión web pública puede requerir seleccionar acceso anónimo en Power BI. El PDF es una presentación estática; la interacción está en el informe nativo.
 
 Para repetir la auditoría independiente, usa Python 3.11, instala `requirements.txt`, coloca el CSV original como explica [Datos](data/README.md) y ejecuta:
 
@@ -57,7 +63,7 @@ python scripts/analizar.py
 
 El notebook se ejecuta desde la raíz del repositorio. El análisis exporta únicamente agregaciones; no publica teléfonos ni filas individuales. Power Query elimina el teléfono del modelo y oculta el identificador de cliente del panel de campos.
 
-Las definiciones de `powerbi/Databel` están en formato **PbixProj de pbi-tools**, no PBIP nativo. La reconstrucción de la plantilla requiere una versión compatible de pbi-tools y Power BI Desktop. Se conserva la plantilla compilada para abrirla directamente. Consulta las [instrucciones de reconstrucción](docs/reconstruccion.md), incluida la procedencia del esquema inicial y la limitación de compatibilidad encontrada.
+`powerbi/DatabelPresentacion` es el proyecto **PBIP/PBIR nativo** validado en Desktop. `powerbi/Databel` conserva las definiciones **PbixProj de pbi-tools** usadas para compilar la alternativa PBIT. Ambos reutilizan el mismo modelo. Consulta las [instrucciones de reconstrucción](docs/reconstruccion.md), incluida la procedencia del esquema inicial y la compatibilidad de las herramientas.
 
 ## Primera prueba y mejora
 
@@ -65,7 +71,7 @@ La primera exploración permitió calcular la tasa global y comparar contratos. 
 
 También distinguí la antigüedad de la cuenta de una fecha de observación. El dataset es una instantánea: no construí una tendencia mensual a partir de la antigüedad ni añadí predicciones que el ejercicio no requiere.
 
-En la revisión añadí el filtro de contrato al resumen y el indicador de clientes retenidos; hice visibles los títulos de los filtros y aumenté la tipografía de los gráficos. También incorporé clientes y bajas a los tooltips de las tasas y retiré el límite de 20 categorías para no omitir segmentos. La verificación visual de estos cambios sigue pendiente; el modelo y los cálculos sí se comprobaron.
+En la revisión añadí el filtro de contrato y los clientes retenidos, aumenté la tipografía y eliminé encabezados duplicados. Incorporé clientes y bajas a los campos de tooltip de las tasas y retiré el límite de 20 categorías. La revisión nativa permitió corregir también el eje de llamadas: ahora muestra cada valor de 0 a 5. Verifiqué las cuatro páginas y el comportamiento de las selecciones guardadas de los segmentadores.
 
 ## Validación y estado
 
@@ -76,7 +82,8 @@ En la revisión añadí el filtro de contrato al resumen y el indicador de clien
 - Consultas DAX ejecutadas correctamente en el modelo inicial de DataCamp, mediante su laboratorio de Power BI en Edge: clientes, bajas, tasa, duplicados, motivos vacíos y los tres tipos de contrato coinciden con la auditoría. Consulta la [validación del motor](docs/validacion_edge.md).
 - **Modelo propio cargado en Power BI Desktop:** partición lista; nueve medidas y transformación Power Query coincidentes con la definición publicada. Las 13 pruebas de contextos de filtro y las 11 combinaciones de campos y medidas de los gráficos coinciden con el CSV. Incluyen filtros combinados, un contexto vacío y recuperación del total.
 - **Plantilla revisada:** compilada y reextraída; modelo idéntico al comprobado, páginas y referencias revisadas técnicamente. Los resultados y el alcance están en [Validación del dashboard](docs/validacion_dashboard.md) y en [la evidencia de consultas](output/validacion_motor.json).
-- **Pendiente de revisión visual:** comprobar páginas, selección de filtros con clics, tooltips y legibilidad dentro de Power BI. La captura y accesibilidad de la ventana local no respondieron. Las pruebas de consultas validan el cálculo con filtros; no demuestran que los controles ni el renderizado funcionen correctamente.
+- **Presentación nativa:** cuatro páginas revisadas en Power BI Desktop mediante el CLI oficial de Microsoft; validación PBIR con cero errores y cero advertencias. Las vistas reales están en el PDF de presentación.
+- **Segmentadores:** cuatro selecciones guardadas en PBIR, cargadas y renderizadas por Desktop: contrato mensual, mensual y California, 65 o más y actividad internacional. Los valores visibles coinciden con la auditoría. Al eliminar las selecciones se recuperan los totales. Esto comprueba la aplicación del filtro en el informe; no se ensayaron clics de ratón ni hover de tooltips. [Registro nativo](output/validacion_nativa.json).
 - DataCamp mostraba los tres capítulos al 100 % **antes** de esta adaptación. No presento ese progreso previo como aprobación de este nuevo archivo por el corrector.
 
 ## Conclusiones y límites

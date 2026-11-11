@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Databel"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "92706e10-fa92-483e-93b4-e994b677f97b"
+  }
+}
